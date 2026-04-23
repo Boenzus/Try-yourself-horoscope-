@@ -437,7 +437,7 @@
                 <p id="spotlight-desc" class="text-xl text-white/80 leading-relaxed serif-font italic"></p>
                 <button id="aiSpotlightBtn" onclick="getAIInsight()" class="ai-sparkle-btn">✨ Cat Eye Insight</button>
                 <div id="aiSpotlightResponse" class="ai-response-container"></div>
-                <button onclick="closeSpotlight()" class="px-8 py-3 border border-ethereal-gold text-ethereal-gold text-xs uppercase tracking-widest hover:bg-ethereal-gold hover:text-white transition">Return to Library</button>
+                <button onclick="closeSpotlight()" class="px-8 py-3 border border-gold-leaf text-gold-leaf text-xs uppercase tracking-widest hover:bg-gold-leaf hover:text-black transition">Return to Library</button>
             </div>
         </div>
     </div>
@@ -467,35 +467,35 @@
     </footer>
 
     <script>
-        const apiKey = ""; // Environment provides key at runtime.
+        const apiKey = ""; // Do not change. Runtime key provided.
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
         let selectedCards = [];
 
         const deckData = {
             major: [
-                { name: "0 • THE CAT (FOOL)", image: "00 - The Fool.jpg", desc: "Starting something new and taking risks. Indicates a person who knows they are taking a risk but wants to try. Pure spirit of adventure." },
-                { name: "I • THE MAGICIAN", image: "01 - The Magician.jpg", desc: "Requires ambition and action. You have the inherent skill to manifest results through your own focused will." },
-                { name: "II • HIGH PRIESTESS", image: "02 - The High Priestess.jpg", desc: "Intelligent, knowledgeable, and capable. She keeps her abilities hidden, only speaking out when necessary. Trust the unrevealed truth." },
-                { name: "III • THE EMPRESS", image: "03 - The Empress.jpg", desc: "Representing motherhood, happiness, comfort, and wealth. These are opportunities that can be seized now." },
-                { name: "IV • THE EMPEROR", image: "04 - The Emperor.jpg", desc: "Often bossy and unwilling to yield. A situation where one must comply with the orders of elders or established authority." },
-                { name: "V • THE HIEROPHANT", image: "05 - The Hierophant.jpg", desc: "Effective performance and traditional knowledge. Represents a unified family or a knowledgeable representative in your life path." },
-                { name: "VI • THE LOVERS", image: "06 - The Lovers.jpg", desc: "Passion, representing recognized love or a difficult decision that must be made with the heart." },
-                { name: "VII • THE CHARIOT", image: "07 - The Chariot.jpg", desc: "Steadfastness and diligence are key. This card signifies achieving success through sheer determination." },
-                { name: "VIII • STRENGTH", image: "08 - Strength.jpg", desc: "The powerful motherboard representing the highest authority; nothing can harm her. She controls the systems of the night." },
-                { name: "IX • THE HERMIT", image: "09 - The Hermit.jpg", desc: "Solitude and healing the mind. Apply this time for analytical thinking and avoid hasty or decisive actions." },
-                { name: "X • WHEEL OF FORTUNE", image: "10 - Wheel of Fortune.jpg", desc: "Change is possible and unexpected. Preparation is not necessary, as cycles of luck will turn as they will." },
-                { name: "XI • JUSTICE", image: "11 - Justice.jpg", desc: "Decision-making, equality, and law. You will receive justice and balance will be restored in your matters." },
-                { name: "XII • THE HANGED CAT", image: "12 - The Hanged Man.jpg", desc: "Waiting and sacrifice. You may be unable to make a decision, requiring you to remain still or sacrifice personal happiness." },
-                { name: "XIII • DEATH", image: "13 - Death.jpg", desc: "Change and rebirth. Turning bad things into good; situations will gradually improve through transformation." },
-                { name: "XIV • TEMPERANCE", image: "14 - Temperance.jpg", desc: "Negotiation, blending, and balance. Create harmony in your life by compromising to get what you want." },
-                { name: "XV • THE DEVIL", image: "15 - The Devil.jpg", desc: "Control, bondage, and hopelessness. Be careful of being unwillingly bound or losing your willpower to external forces." },
-                { name: "XVI • THE TOWER", image: "16 - The Tower.jpg", desc: "Sudden change and conflict. Prepare for unexpected events or unforeseen news that may cause major shifts." },
-                { name: "XVII • THE STAR", image: "17 - The Star.jpg", desc: "Hope and peace. A glimmer of hope appearing even in the darkest times. Maintain a calm and composed demeanor." },
-                { name: "XVIII • THE MOON", image: "18 - The Moon.jpg", desc: "Fear and illusion. Consider carefully whether your fears are real or merely illusions creeping in unexpectedly." },
-                { name: "XIX • THE SUN", image: "19 - The Sun.jpg", desc: "Growth, light, and vitality. Passion and vibrancy lead to a positive surprise coming your way soon." },
-                { name: "XX • JUDGEMENT", image: "20 - Judgement.jpg", desc: "Decision-making and a second chance. Let go of the past to make room for new importantes choices." },
-                { name: "XXI • THE WORLD", image: "21 - The World.jpg", desc: "Success and fulfillment. A very positive card signifying a successful conclusion and a fulfilling life." }
+                { name: "0 • THE CAT (FOOL)", image: "00 - THE CAT (FOOL).jpg", desc: "Starting something new and taking risks. Indicates a person who knows they are taking a risk but wants to try. Pure spirit of adventure." },
+                { name: "I • THE MAGICIAN", image: "01 - THE MAGICIAN.jpg", desc: "Requires ambition and action. You have the inherent skill to manifest results through your own focused will." },
+                { name: "II • HIGH PRIESTESS", image: "02 - HIGH PRIESTESS.jpg", desc: "Intelligent, knowledgeable, and capable. She keeps her abilities hidden, only speaking out when necessary. Trust the unrevealed truth." },
+                { name: "III • THE EMPRESS", image: "03 - THE EMPRESS.jpg", desc: "Representing motherhood, happiness, comfort, and wealth. These are opportunities that can be seized now." },
+                { name: "IV • THE EMPEROR", image: "04 - THE EMPEROR.jpg", desc: "Often bossy and unwilling to yield. A situation where one must comply with the orders of elders or established authority." },
+                { name: "V • THE HIEROPHANT", image: "05 - THE HIEROPHANT.jpg", desc: "Effective performance and traditional knowledge. Represents a unified family or a knowledgeable representative in your life path." },
+                { name: "VI • THE LOVERS", image: "06 - THE LOVERS.jpg", desc: "Passion, representing recognized love or a difficult decision that must be made with the heart." },
+                { name: "VII • THE CHARIOT", image: "07 - THE CHARIOT.jpg", desc: "Steadfastness and diligence are key. This card signifies achieving success through sheer determination." },
+                { name: "VIII • STRENGTH", image: "08 - STRENGTH.jpg", desc: "The powerful motherboard representing the highest authority; nothing can harm her. She controls the systems of the night." },
+                { name: "IX • THE HERMIT", image: "09 - THE HERMIT.jpg", desc: "Solitude and healing the mind. Apply this time for analytical thinking and avoid hasty or decisive actions." },
+                { name: "X • WHEEL OF FORTUNE", image: "10 - WHEEL OF FORTUNE.jpg", desc: "Change is possible and unexpected. Preparation is not necessary, as cycles of luck will turn as they will." },
+                { name: "XI • JUSTICE", image: "11 - JUSTICE.jpg", desc: "Decision-making, equality, and law. You will receive justice and balance will be restored in your matters." },
+                { name: "XII • THE HANGED CAT", image: "12 - THE HANGED CAT.jpg", desc: "Waiting and sacrifice. You may be unable to make a decision, requiring you to remain still or sacrifice personal happiness." },
+                { name: "XIII • DEATH", image: "13 - DEATH.jpg", desc: "Change and rebirth. Turning bad things into good; situations will gradually improve through transformation." },
+                { name: "XIV • TEMPERANCE", image: "14 - TEMPERANCE.jpg", desc: "Negotiation, blending, and balance. Create harmony in your life by compromising to get what you want." },
+                { name: "XV • THE DEVIL", image: "15 - THE DEVIL.jpg", desc: "Control, bondage, and hopelessness. Be careful of being unwillingly bound or losing your willpower to external forces." },
+                { name: "XVI • THE TOWER", image: "16 - THE TOWER.jpg", desc: "Sudden change and conflict. Prepare for unexpected events or unforeseen news that may cause major shifts." },
+                { name: "XVII • THE STAR", image: "17 - THE STAR.jpg", desc: "Hope and peace. A glimmer of hope appearing even in the darkest times. Maintain a calm and composed demeanor." },
+                { name: "XVIII • THE MOON", image: "18 - THE MOON.jpg", desc: "Fear and illusion. Consider carefully whether your fears are real or merely illusions creeping in unexpectedly." },
+                { name: "XIX • THE SUN", image: "19 - THE SUN.jpg", desc: "Growth, light, and vitality. Passion and vibrancy lead to a positive surprise coming your way soon." },
+                { name: "XX • JUDGEMENT", image: "20 - JUDGEMENT.jpg", desc: "Decision-making and a second chance. Let go of the past to make room for new importantes choices." },
+                { name: "XXI • THE WORLD", image: "21 - THE WORLD.jpg", desc: "Success and fulfillment. A very positive card signifying a successful conclusion and a fulfilling life." }
             ],
             minor: {
                 Wands: Array.from({length: 14}, (_, i) => {
@@ -504,8 +504,8 @@
                 }),
                 Cups: Array.from({length: 14}, (_, i) => {
                     const name = `${numToWord[i]} of Cups`;
-                    const specialDesc = (i === 8) ? "Fulfillment and hopes coming true. What you desire is about to become a reality. Just sit back and wait." : "Feelings, emotional beginnings, and deep connections of the heart.";
-                    return { name, image: `${i + 36} - ${name}.jpg`, desc: specialDesc, type: 'minor', suit: 'Cups', index: i };
+                    const desc = (i === 8) ? "Fulfillment and hopes coming true. What you desire is about to become a reality. Just sit back and wait." : "Feelings, emotional beginnings, and deep connections of the heart.";
+                    return { name, image: `${i + 36} - ${name}.jpg`, desc, type: 'minor', suit: 'Cups', index: i };
                 }),
                 Swords: Array.from({length: 14}, (_, i) => {
                     const name = `${numToWord[i]} of Swords`;
@@ -526,30 +526,41 @@
             ...deckData.minor.Pentacles
         ];
 
-        // --- ENHANCED AI CALLING WITH EXPONENTIAL BACKOFF ---
+        // --- ENHANCED AI CALLING WITH STRICT RETRY LOGIC ---
         async function callGemini(prompt) {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical spirit of pure light. Speak in a wise, ancient, feline-inspired tone. Use metaphors about sunlight and morning dew. Interpret the human soul's journey with clarity." }] }
+                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical digital spirit of good light. Your tone is ancient, pure, and deeply wise. Use metaphors about sunlight, morning dew, and safe dens. Focus on the positive spiritual journey of the human soul." }] }
             };
             
-            const retryDelays = [1000, 2000, 4000, 8000, 16000];
-            for (let i = 0; i <= retryDelays.length; i++) {
+            const delays = [1000, 2000, 4000, 8000, 16000];
+            for (let i = 0; i <= delays.length; i++) {
                 try {
+                    if (apiKey === "") {
+                        // Helpful reminder for user testing on their public site
+                        if (window.location.hostname !== "localhost" && !window.location.hostname.includes("gemini")) {
+                           return "The mystical digital spirit requires an API Key to function on your public website. Please ensure your apiKey variable is set.";
+                        }
+                    }
+
                     const response = await fetch(url, { 
                         method: 'POST', 
                         headers: { 'Content-Type': 'application/json' }, 
                         body: JSON.stringify(payload) 
                     });
+                    
                     if (!response.ok) throw new Error(`API: ${response.status}`);
+                    
                     const data = await response.json();
                     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (!text) throw new Error('No content from spirit world.');
+                    if (!text) throw new Error('No content received from spirit world.');
+                    
                     return text;
                 } catch (err) {
-                    if (i === retryDelays.length) throw err;
-                    await new Promise(r => setTimeout(r, retryDelays[i]));
+                    console.error("AI Spirit Connection Error:", err);
+                    if (i === delays.length) throw err;
+                    await new Promise(r => setTimeout(r, delays[i]));
                 }
             }
         }
@@ -559,12 +570,14 @@
             const resBox = document.getElementById('aiReadingResponse');
             btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Calling the Spirit...`;
             resBox.classList.remove('active');
-            const cardContext = selectedCards.map((c, i) => `Position ${i+1}: ${c.name} (${c.desc})`).join('\n');
+            
+            const cardContext = selectedCards.map((c, i) => `Position ${i+1} (${["Past", "Present", "Future"][i]}): ${c.name} (${c.desc})`).join('\n');
+            
             try {
-                const result = await callGemini(`Provide a cohesive 3-card tarot reading in one paragraph:\n${cardContext}`);
+                const result = await callGemini(`Provide a cohesive 3-card tarot prophecy in one flowing paragraph:\n${cardContext}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "The spirit world is hazy. Please check your connection and try again."; resBox.classList.add('active');
+                resBox.innerHTML = "The spirit world is hazy right now. Please wait and try once more."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cohesive AI Interpretation`; }
         }
 
@@ -575,10 +588,10 @@
             btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Peer into the light...`;
             resBox.classList.remove('active');
             try {
-                const result = await callGemini(`Deep insight for ${currentSpotlightCard.name}. Traditional meaning: ${currentSpotlightCard.desc}`);
+                const result = await callGemini(`Provide a deep mystical insight for the card: ${currentSpotlightCard.name}. Traditional context: ${currentSpotlightCard.desc}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "The mystical veil is too thick. Try again in a moment."; resBox.classList.add('active');
+                resBox.innerHTML = "The mystical veil is too thick. Let us try once more in a few seconds."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cat Eye Insight`; }
         }
 
