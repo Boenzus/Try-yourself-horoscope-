@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Oracle's Veil | Custom Cat Tarot</title>
+    <title>The Oracle's Veil | คำพยากรณ์โดย Cat Prophet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Lighter Dark "Good Spirit" Theme Palette */
             --spirit-bg: #1a1a1e; 
             --spirit-surface: #2a2a30;
             --ethereal-gold: #d4af37;
@@ -35,9 +34,8 @@
         }
 
         .nav-link {
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
             font-weight: 700;
             color: rgba(244, 244, 245, 0.7);
             transition: all 0.3s;
@@ -71,10 +69,9 @@
             background: transparent;
             border: none;
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             outline: none;
             width: 140px;
-            text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         .search-input:focus { width: 220px; }
@@ -96,8 +93,7 @@
         .search-results.active { display: block; }
         .search-item {
             padding: 12px 18px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
+            font-size: 0.8rem;
             cursor: pointer;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             transition: all 0.2s;
@@ -172,6 +168,7 @@
             text-transform: uppercase; letter-spacing: 1px;
             color: var(--ethereal-gold); background: #000;
             width: 100%; z-index: 2;
+            text-align: center;
         }
 
         /* Hero Pill Styling */
@@ -182,10 +179,9 @@
             border-radius: 9999px;
             display: inline-block;
             font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 2.5rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
@@ -194,10 +190,8 @@
             padding: 15px 40px;
             border: 1px solid var(--bone-white);
             color: var(--bone-white);
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
             transition: all 0.3s;
             display: inline-block;
         }
@@ -236,51 +230,8 @@
             background: rgba(212, 175, 55, 0.05);
             border: 1px dashed var(--ethereal-gold);
             color: var(--ethereal-gold);
-            padding: 1.5rem; border-radius: 16px; font-size: 0.85rem; margin-top: 2rem;
+            padding: 1.5rem; border-radius: 16px; font-size: 0.9rem; margin-top: 2rem;
         }
-
-        /* AI Feature Styles */
-        .ai-sparkle-btn {
-            background: linear-gradient(135deg, var(--mystic-lavender), #8b5cf6);
-            border: none;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
-        }
-        .ai-sparkle-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(167, 139, 250, 0.5);
-        }
-        .ai-response-container {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
-            background: rgba(255,255,255,0.03);
-            line-height: 1.6;
-            font-style: italic;
-            color: var(--bone-white);
-            display: none;
-        }
-        .ai-response-container.active { display: block; }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
 
         .search-decoration {
             font-size: 1.4rem;
@@ -305,7 +256,7 @@
                     <span class="text-ethereal-gold opacity-60">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </span>
-                    <input type="text" id="cardSearch" class="search-input" placeholder="Search a card..." oninput="handleSearch(this.value)">
+                    <input type="text" id="cardSearch" class="search-input" placeholder="ค้นหาชื่อไพ่..." oninput="handleSearch(this.value)">
                     <div id="searchResults" class="search-results"></div>
                 </div>
                 <div class="search-decoration">🐱</div>
@@ -318,11 +269,11 @@
         </div>
 
         <div class="hidden lg:flex gap-8">
-            <a href="#article" class="nav-link"> ARCHIVE</a>
-            <a href="#guide" class="nav-link"> RITUAL GUIDE</a>
-            <a href="#reading" class="nav-link"> DIVINATION</a>
-            <a href="#history" class="nav-link"> HISTORY</a>
-            <a href="#contact" class="nav-link"> CONTACT</a>
+            <a href="#article" class="nav-link">คลังไพ่</a>
+            <a href="#guide" class="nav-link">คู่มือพิธีกรรม</a>
+            <a href="#reading" class="nav-link">การพยากรณ์</a>
+            <a href="#history" class="nav-link">ประวัติ</a>
+            <a href="#contact" class="nav-link">ติดต่อ</a>
         </div>
     </nav>
 
@@ -331,38 +282,38 @@
             UNVEIL THE<br>SECRET WISDOM
         </h1>
         <div class="hero-pill">
-            Cat Prophet's Interpretations of the Sacred 78
+            การตีความไพ่ทาโรต์ 78 ใบ โดย Cat Prophet
         </div>
         <div>
-            <a href="#reading" class="hero-btn">Consult the Oracle</a>
+            <a href="#reading" class="hero-btn">ปรึกษาคำพยากรณ์</a>
         </div>
     </header>
 
     <!-- Archive -->
     <section id="article" class="py-32 px-6 bg-black/30">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl mystic-font text-ethereal-gold mb-16 uppercase tracking-widest">The Celestial Library</h2>
+            <h2 class="text-4xl mystic-font text-ethereal-gold mb-16 uppercase tracking-widest">หอสมุดแห่งจักรวาล</h2>
             <div class="grid md:grid-cols-2 gap-10">
                 <div onclick="showCategory('major')" class="p-10 bg-white/5 border border-white/10 rounded-3xl cursor-pointer hover:border-ethereal-gold hover:shadow-2xl transition group">
                     <h3 class="text-ethereal-gold font-bold mb-2 uppercase text-2xl group-hover:scale-105 transition-transform">Major Arcana</h3>
-                    <p class="text-xs opacity-60">The 22 Primary Archetypes</p>
+                    <p class="text-xs opacity-60">ไพ่ชุดหลัก 22 ใบ (ต้นแบบแห่งจิตวิญญาณ)</p>
                 </div>
                 <div onclick="showCategory('minor')" class="p-10 bg-white/5 border border-white/10 rounded-3xl cursor-pointer hover:border-ethereal-gold hover:shadow-2xl transition group">
                     <h3 class="text-gold-leaf font-bold mb-2 uppercase text-2xl group-hover:scale-105 transition-transform">Minor Arcana</h3>
-                    <p class="text-xs opacity-60">The 56 Daily Rituals of Life</p>
+                    <p class="text-xs opacity-60">ไพ่ชุดรอง 56 ใบ (เรื่องราวในชีวิตประจำวัน)</p>
                 </div>
             </div>
 
             <div id="category-detail" class="mt-16 hidden opacity-0 transition-all duration-1000 transform translate-y-8 p-12 bg-zinc-900 rounded-[40px] border border-ethereal-gold/20 shadow-2xl backdrop-blur-xl">
                 <div class="flex justify-between items-center mb-12 border-b border-white/5 pb-6">
                     <h3 id="detail-title" class="text-3xl mystic-font text-ethereal-gold uppercase">Library</h3>
-                    <button onclick="hideCategory()" class="text-xs uppercase tracking-widest text-white/40 hover:text-ethereal-gold px-4 py-2 border border-white/10 rounded-full">Close X</button>
+                    <button onclick="hideCategory()" class="text-xs uppercase tracking-widest text-white/40 hover:text-ethereal-gold px-4 py-2 border border-white/10 rounded-full">ปิด X</button>
                 </div>
                 <div id="suit-selector" class="hidden flex flex-wrap gap-4 mb-12 justify-center">
-                    <button onclick="filterMinor('Wands')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">Wands</button>
-                    <button onclick="filterMinor('Cups')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">Cups</button>
-                    <button onclick="filterMinor('Swords')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">Swords</button>
-                    <button onclick="filterMinor('Pentacles')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">Pentacles</button>
+                    <button onclick="filterMinor('Wands')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">ไม้เท้า</button>
+                    <button onclick="filterMinor('Cups')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">ถ้วย</button>
+                    <button onclick="filterMinor('Swords')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">ดาบ</button>
+                    <button onclick="filterMinor('Pentacles')" class="suit-btn px-6 py-3 border border-white/10 rounded-full text-xs uppercase tracking-widest hover:bg-white/5 transition">เหรียญ</button>
                 </div>
                 <div id="detail-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[600px] overflow-y-auto pr-4 text-center"></div>
             </div>
@@ -372,24 +323,24 @@
     <!-- Ritual Guide -->
     <section id="guide" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl mystic-font text-ethereal-gold mb-4 uppercase tracking-widest">The Sacred Ritual</h2>
-            <p class="serif-font italic text-xl opacity-60 mb-16">A beginner's path to the three-card spread</p>
+            <h2 class="text-4xl mystic-font text-ethereal-gold mb-4 uppercase tracking-widest">คู่มือพิธีกรรมศักดิ์สิทธิ์</h2>
+            <p class="serif-font italic text-xl opacity-60 mb-16">เส้นทางสำหรับผู้เริ่มต้นในการอ่านไพ่สามใบ</p>
             
             <div class="grid md:grid-cols-3 gap-8 text-left">
                 <div class="step-card">
                     <div class="step-num">01</div>
-                    <h3 class="font-bold uppercase tracking-widest mb-4">Set the Sanctuary</h3>
-                    <p class="text-sm leading-relaxed opacity-70">Find a quiet, secluded area where your spirit feels at peace. You may light a candle or incense to cleanse the space and sharpen your focus.</p>
+                    <h3 class="font-bold uppercase tracking-widest mb-4">เตรียมสถานที่</h3>
+                    <p class="text-sm leading-relaxed opacity-70">หาสถานที่ที่เงียบสงบและปลีกตัวจากความวุ่นวาย ที่ซึ่งจิตวิญญาณของคุณรู้สึกสงบ คุณอาจจุดเทียนหรือกำยานเพื่อชำระล้างพื้นที่และช่วยให้มีสมาธิมากขึ้น</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">02</div>
-                    <h3 class="font-bold uppercase tracking-widest mb-4">Focus the Intention</h3>
-                    <p class="text-sm leading-relaxed opacity-70">Ask a simple, open question. Do not seek a bias; instead, ask "What can I learn from the coming moon?" and hold this thought while you shuffle.</p>
+                    <h3 class="font-bold uppercase tracking-widest mb-4">ตั้งจิตอธิษฐาน</h3>
+                    <p class="text-sm leading-relaxed opacity-70">ตั้งคำถามที่เรียบง่ายและเปิดกว้าง อย่าหาคำตอบที่ลำเอียงเข้าข้างตนเอง แต่ให้ถามว่า "ข้าพเจ้าสามารถเรียนรู้อะไรได้บ้างในช่วงเวลานี้?" และระลึกถึงสิ่งนี้ขณะสับไพ่</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">03</div>
-                    <h3 class="font-bold uppercase tracking-widest mb-4">The Trinity Draw</h3>
-                    <p class="text-sm leading-relaxed opacity-70">Divide the deck into three stacks. Flip the top card of each. From left to right, they represent your **Past**, your **Present**, and your **Future Outcome**.</p>
+                    <h3 class="font-bold uppercase tracking-widest mb-4">การจั่วไพ่สามใบ</h3>
+                    <p class="text-sm leading-relaxed opacity-70">แบ่งกองไพ่ออกเป็นสามกองเท่าๆ กัน หงายไพ่ใบบนสุดของแต่ละกองขึ้น จากซ้ายไปขวา ไพ่เหล่านี้จะแทน **อดีต**, **ปัจจุบัน** และ **ผลลัพธ์ในอนาคต** ของคุณ</p>
                 </div>
             </div>
         </div>
@@ -397,36 +348,38 @@
 
     <section id="history" class="py-32 px-6 bg-black/20">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl mystic-font text-ethereal-gold mb-12 uppercase tracking-[0.3em]">History of Card</h2>
+            <h2 class="text-3xl mystic-font text-ethereal-gold mb-12 uppercase tracking-[0.3em]">ประวัติความเป็นมา</h2>
             <div class="artist-seal rounded-3xl">
                 <h3 class="serif-font italic text-3xl mb-2 text-ethereal-gold">Pamela Colman Smith</h3>
                 <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-6 text-bone-white">"Pixie" • 1878 – 1951</p>
                 <div class="h-px w-24 bg-ethereal-gold/40 mx-auto mb-8"></div>
                 <div class="text-bone-white/80 leading-relaxed text-lg space-y-4 max-w-3xl mx-auto font-light text-center">
-                    <p>This collection is an eternal tribute to the visionary work of <span class="text-ethereal-gold font-bold">Pamela Colman Smith</span>. A British artist and occultist, her contributions redefined the language of the Tarot.</p>
-                    <p>In 1909, she achieved a breakthrough: she was the <span class="italic">first</span> to illustrate the Minor Arcana with full human imagery, transforming symbols into deep stories.</p>
-                    <p class="text-sm opacity-60">Cat Prophet celebrates her original archetypes by re-imagining them through this dedicated cat-themed creative lens.</p>
+                    <p>คอลเลกชันนี้เป็นการระลึกถึงผลงานที่มีวิสัยทัศน์ของ <span class="text-ethereal-gold font-bold">Pamela Colman Smith</span> ศิลปินและนักไสยศาสตร์ชาวบริติช ผู้ปฏิรูปภาษาของไพ่ทาโรต์สำหรับยุคสมัยใหม่</p>
+                    <p>ในปี 1909 เธอได้สร้างประวัติศาสตร์: เธอเป็นคน <span class="italic">แรก</span> ที่วาดภาพไพ่ชุดรอง (Minor Arcana) ด้วยภาพเหตุการณ์ที่เต็มไปด้วยผู้คน เปลี่ยนสัญลักษณ์ง่ายๆ ให้กลายเป็นเรื่องราวทางจิตวิทยาที่ลึกซึ้ง</p>
+                    <p class="text-sm opacity-60">Cat Prophet เฉลิมฉลองต้นแบบงานเขียนของเธอ โดยการตีความใหม่ผ่านมุมมองที่เน้นเรื่องแมวอย่างทุ่มเท</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Divination Section -->
     <section id="reading" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">Draw Three Cards</h2>
-            <p class="text-ethereal-gold italic mb-20 text-xl serif-font text-center">Focus your spirit and unveil your vibration.</p>
+            <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">จั่วไพ่สามใบ</h2>
+            <p class="text-ethereal-gold italic mb-20 text-xl serif-font text-center">ตั้งสมาธิและเปิดรับแรงสั่นสะเทือนของคุณ</p>
             <div id="deck-container" class="flex flex-wrap justify-center gap-12"></div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-32 px-6 bg-black/20 text-center">
-        <h2 class="text-3xl mystic-font text-ethereal-gold mb-8 uppercase tracking-widest">Connect with Cat Prophet</h2>
+        <h2 class="text-3xl mystic-font text-ethereal-gold mb-8 uppercase tracking-widest">ติดต่อ Cat Prophet</h2>
         <div class="h-px w-16 bg-ethereal-gold mx-auto mb-8"></div>
-        <p class="text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto">Should you have questions or wish to discuss the artistic journey, please reach out via the link below.</p>
-        <a href="mailto:your-email@example.com" class="px-12 py-5 border border-ethereal-gold text-ethereal-gold uppercase tracking-[0.3em] font-bold hover:bg-ethereal-gold hover:text-white transition shadow-lg">Send Email Inquiry</a>
+        <p class="text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto">หากคุณมีคำถามเกี่ยวกับไพ่ หรือต้องการพูดคุยเกี่ยวกับเส้นทางศิลปะนี้ โปรดติดต่อเราผ่านลิงก์ด้านล่าง</p>
+        <a href="mailto:your-email@example.com" class="px-12 py-5 border border-ethereal-gold text-ethereal-gold uppercase tracking-[0.3em] font-bold hover:bg-ethereal-gold hover:text-white transition shadow-lg">ส่งอีเมลสอบถาม</a>
     </section>
 
-    <!-- Spotlight Modal -->
+    <!-- Modal for Spotlighting Single Card -->
     <div id="spotlightModal" class="modal">
         <div class="max-w-4xl w-full flex flex-col md:flex-row gap-12 items-center bg-[#121214] border border-ethereal-gold/40 p-12 rounded-[40px] relative shadow-2xl">
             <button onclick="closeSpotlight()" class="absolute top-8 right-10 text-4xl text-white/20 hover:text-ethereal-gold transition">&times;</button>
@@ -435,89 +388,85 @@
                 <h2 id="spotlight-title" class="text-4xl md:text-5xl mystic-font text-white uppercase tracking-tighter">Card Name</h2>
                 <div class="h-px w-24 bg-ethereal-gold"></div>
                 <p id="spotlight-desc" class="text-xl text-white/80 leading-relaxed serif-font italic"></p>
-                <button id="aiSpotlightBtn" onclick="getAIInsight()" class="ai-sparkle-btn">✨ Cat Eye Insight</button>
-                <div id="aiSpotlightResponse" class="ai-response-container"></div>
-                <button onclick="closeSpotlight()" class="px-8 py-3 border border-gold-leaf text-gold-leaf text-xs uppercase tracking-widest hover:bg-gold-leaf hover:text-black transition">Return to Library</button>
+                <button onclick="closeSpotlight()" class="px-8 py-3 border border-gold-leaf text-gold-leaf text-xs uppercase tracking-widest hover:bg-gold-leaf hover:text-black transition">กลับไปยังคลังไพ่</button>
             </div>
         </div>
     </div>
 
-    <!-- Reading Modal -->
+    <!-- Final Reading Result Modal -->
     <div id="readingModal" class="modal">
         <div class="bg-[#121214] border border-ethereal-gold/30 p-12 max-w-3xl w-full rounded-[40px] relative shadow-2xl">
             <div class="text-center">
-                <h3 class="text-4xl mystic-font text-ethereal-gold mb-4 tracking-widest">The Prophecy</h3>
+                <h3 class="text-4xl mystic-font text-ethereal-gold mb-4 tracking-widest">คำทำนาย</h3>
                 <div id="modal-content" class="space-y-6 text-left max-h-[45vh] overflow-y-auto px-4 mt-8 text-white"></div>
-                <div class="mt-8 flex flex-col items-center">
-                    <button id="aiReadingBtn" onclick="getAIInterpretation()" class="ai-sparkle-btn mx-auto">✨ Cohesive AI Interpretation</button>
-                    <div id="aiReadingResponse" class="ai-response-container text-left w-full"></div>
-                </div>
                 <div class="warning-tag">
-                    <p class="font-black mb-2 uppercase tracking-widest text-xs">⚠️ Sacred Warning</p>
-                    <p class="italic text-sm">Destiny requires time to manifest. Do not consult the cards again for at least 3 months.</p>
+                    <p class="font-black mb-2 uppercase tracking-widest text-xs">⚠️ คำเตือนอันศักดิ์สิทธิ์</p>
+                    <p class="italic text-sm">โชคชะตาต้องใช้เวลาในการปรากฏผล โปรดอย่าจั่วไพ่ซ้ำในเรื่องเดิมเป็นเวลาอย่างน้อย 3 เดือน</p>
                 </div>
-                <button onclick="closeModal()" class="mt-10 px-12 py-4 bg-ethereal-gold text-white font-black uppercase tracking-widest text-xs rounded-full hover:scale-105 transition">I Acknowledge</button>
+                <button onclick="closeModal()" class="mt-10 px-12 py-4 bg-ethereal-gold text-white font-black uppercase tracking-widest text-xs rounded-full hover:scale-105 transition">ข้าพเจ้ารับทราบ</button>
             </div>
         </div>
     </div>
 
     <footer class="py-24 text-center border-t border-white/5 opacity-60">
         <p class="text-ethereal-gold uppercase tracking-[0.5em] text-[10px] mb-2">&copy; THE ORACLE'S VEIL | CAT PROPHET</p>
-        <p class="text-[9px] tracking-widest opacity-70 uppercase italic text-bone-white">Inspired by the archetypes of Pamela Colman Smith</p>
+        <p class="text-[9px] tracking-widest opacity-70 uppercase italic text-bone-white">ได้รับแรงบันดาลใจจากต้นแบบของ Pamela Colman Smith</p>
     </footer>
 
     <script>
-        // API KEY REQUIREMENT: 
-        // For the AI features to work on your live GitHub website, you MUST 
-        // get a free API Key from https://aistudio.google.com/ and paste it below.
-        const apiKey = ""; 
-
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
         let selectedCards = [];
 
         const deckData = {
             major: [
-                { name: "0 • THE CAT (FOOL)", image: "00 - THE CAT (FOOL).jpg", desc: "Starting something new and taking risks. Indicates a person who knows they are taking a risk but wants to try. Pure spirit of adventure." },
-                { name: "I • THE MAGICIAN", image: "01 - THE MAGICIAN.jpg", desc: "Requires ambition and action. You have the inherent skill to manifest results through your own focused will." },
-                { name: "II • HIGH PRIESTESS", image: "02 - HIGH PRIESTESS.jpg", desc: "Intelligent, knowledgeable, and capable. She keeps her abilities hidden, only speaking out when necessary. Trust the unrevealed truth." },
-                { name: "III • THE EMPRESS", image: "03 - THE EMPRESS.jpg", desc: "Representing motherhood, happiness, comfort, and wealth. These are opportunities that can be seized now." },
-                { name: "IV • THE EMPEROR", image: "04 - THE EMPEROR.jpg", desc: "Often bossy and unwilling to yield. A situation where one must comply with the orders of elders or established authority." },
-                { name: "V • THE HIEROPHANT", image: "05 - THE HIEROPHANT.jpg", desc: "Effective performance and traditional knowledge. Represents a unified family or a knowledgeable representative in your life path." },
-                { name: "VI • THE LOVERS", image: "06 - THE LOVERS.jpg", desc: "Passion, representing recognized love or a difficult decision that must be made with the heart." },
-                { name: "VII • THE CHARIOT", image: "07 - THE CHARIOT.jpg", desc: "Steadfastness and diligence are key. This card signifies achieving success through sheer determination." },
-                { name: "VIII • STRENGTH", image: "08 - STRENGTH.jpg", desc: "The powerful motherboard representing the highest authority; nothing can harm her. She controls the systems of the night." },
-                { name: "IX • THE HERMIT", image: "09 - THE HERMIT.jpg", desc: "Solitude and healing the mind. Apply this time for analytical thinking and avoid hasty or decisive actions." },
-                { name: "X • WHEEL OF FORTUNE", image: "10 - WHEEL OF FORTUNE.jpg", desc: "Change is possible and unexpected. Preparation is not necessary, as cycles of luck will turn as they will." },
-                { name: "XI • JUSTICE", image: "11 - JUSTICE.jpg", desc: "Decision-making, equality, and law. You will receive justice and balance will be restored in your matters." },
-                { name: "XII • THE HANGED CAT", image: "12 - THE HANGED CAT.jpg", desc: "Waiting and sacrifice. You may be unable to make a decision, requiring you to remain still or sacrifice personal happiness." },
-                { name: "XIII • DEATH", image: "13 - DEATH.jpg", desc: "Change and rebirth. Turning bad things into good; situations will gradually improve through transformation." },
-                { name: "XIV • TEMPERANCE", image: "14 - TEMPERANCE.jpg", desc: "Negotiation, blending, and balance. Create harmony in your life by compromising to get what you want." },
-                { name: "XV • THE DEVIL", image: "15 - THE DEVIL.jpg", desc: "Control, bondage, and hopelessness. Be careful of being unwillingly bound or losing your willpower to external forces." },
-                { name: "XVI • THE TOWER", image: "16 - THE TOWER.jpg", desc: "Sudden change and conflict. Prepare for unexpected events or unforeseen news that may cause major shifts." },
-                { name: "XVII • THE STAR", image: "17 - THE STAR.jpg", desc: "Hope and peace. A glimmer of hope appearing even in the darkest times. Maintain a calm and composed demeanor." },
-                { name: "XVIII • THE MOON", image: "18 - THE MOON.jpg", desc: "Fear and illusion. Consider carefully whether your fears are real or merely illusions creeping in unexpectedly." },
-                { name: "XIX • THE SUN", image: "19 - THE SUN.jpg", desc: "Growth, light, and vitality. Passion and vibrancy lead to a positive surprise coming your way soon." },
-                { name: "XX • JUDGEMENT", image: "20 - JUDGEMENT.jpg", desc: "Decision-making and a second chance. Let go of the past to make room for new importantes choices." },
-                { name: "XXI • THE WORLD", image: "21 - THE WORLD.jpg", desc: "Success and fulfillment. A very positive card signifying a successful conclusion and a fulfilling life." }
+                { name: "0 • THE FOOL", image: "00 - The Fool.jpg", desc: "การเริ่มต้นอะไรใหม่ๆ การเสี่ยงอันตราย เส้นทางใหม่ที่คุณจะเดินไปอาจมีความเสี่ยง แต่เป็นความเสี่ยงที่คุณต้องการ รู้ว่าเสี่ยงแต่คงต้องขอลอง" },
+                { name: "I • THE MAGICIAN", image: "01 - The Magician.jpg", desc: "ความทะเยอทะยาน การลงมือทำ คุณเก่งมาก อยากทำอะไรก็ลุยให้เต็มที่เลย เพราะไฟในตัวมีเยอะพอๆ กับความสามารถ ลุยได้เลยไม่ต้องยั้ง" },
+                { name: "II • HIGH PRIESTESS", image: "02 - The High Priestess.jpg", desc: "ความฉลาด มีความรู้ความสามารถ เป็นตัวแทนของคนเก่ง แต่มักซ่อนสิ่งนั้นเอาไว้ภายในรูปลักษณ์นิ่งเงียบที่แสดงให้ภายนอกได้เห็น" },
+                { name: "III • THE EMPRESS", image: "03 - The Empress.jpg", desc: "ความอุดมสมบูรณ์ ความเป็นแม่ จะเจอแต่ความสุขความสบาย เงินทองมั่งมี หรืออาจหมายถึงโอกาสตั้งครรภ์" },
+                { name: "IV • THE EMPEROR", image: "04 - The Emperor.jpg", desc: "การมีอำนาจ ชอบสั่ง และไม่ยอมใคร อาจอยู่ในสถานการณ์ที่ต้องยอมทำตามผู้ใหญ่ ถูกบังคับจากคนมีอำนาจมากกว่า และยังหมายถึงความมั่นคง" },
+                { name: "V • THE HIEROPHANT", image: "05 - The Hierophant.jpg", desc: "การมีความรู้ การแต่งงาน การรวมเป็นหนึ่ง เป็นตัวแทนของผู้มีความรู้หรือการเป็นที่พึ่งพาของคนอื่นๆ" },
+                { name: "VI • THE LOVERS", image: "06 - The Lovers.jpg", desc: "ความรัก การตัดสินใจ ได้พบเจอความรัก หรือต้องตัดสินใจเลือกสิ่งใดสิ่งหนึ่งจากหัวใจ" },
+                { name: "VII • THE CHARIOT", image: "07 - The Chariot.jpg", desc: "ความแน่วแน่ มุ่งมั่น ขยัน ทุ่มเท ต้องทำตัวให้แข็งแกร่งยิ่งกว่าม้าศึกถึงจะประสบความสำเร็จในสิ่งที่ทำ" },
+                { name: "VIII • STRENGTH", image: "08 - Strength.jpg", desc: "ความแข็งแกร่ง บริหารจัดการเก่ง ตัวแทนของความแกร่ง มีอะไรเข้ามาก็ไม่อาจทำอะไรคุณได้ แถมยังจัดการสิ่งต่างๆ ได้เป็นอย่างดี" },
+                { name: "IX • THE HERMIT", image: "09 - The Hermit.jpg", desc: "ความสันโดษ โดดเดี่ยว วิเคราะห์ การอยู่ตัวคนเดียวเพื่อรักษาเยียวยาจิตใจ หรือใช้เวลาคิดวิเคราะห์สิ่งต่างๆ อย่าได้ใจร้อนเด็ดขาด" },
+                { name: "X • WHEEL OF FORTUNE", image: "10 - Wheel of Fortune.jpg", desc: "โชคชะตา การเปลี่ยนแปลง ต้องเตรียมตัวให้ดีเพราะอาจเกิดเรื่องไม่คาดฝันที่ไม่สามารถขัดขวางได้" },
+                { name: "XI • JUSTICE", image: "11 - Justice.jpg", desc: "การตัดสินใจ เท่าเทียม กฎหมาย จะได้รับความยุติธรรม มีการตัดสินใจที่ก่อให้เกิดความเท่าเทียม หรือเจอเรื่องเกี่ยวกับกฎหมาย" },
+                { name: "XII • THE HANGED MAN", image: "12 - The Hanged Man.jpg", desc: "การรอคอย เสียสละ ตกอยู่ในสถานการณ์ที่ไม่อาจตัดสินใจได้ ต้องอยู่นิ่งๆ หรือยอมเสียสละความสุขส่วนตัวบางอย่าง" },
+                { name: "XIII • DEATH", image: "13 - Death.jpg", desc: "การเปลี่ยนแปลง เกิดใหม่ เรื่องร้ายๆ จะกลายเป็นดี สิ่งต่างๆ ที่ว่าร้ายแรงจะเริ่มเปลี่ยนแปลงไปในทางที่ดีขึ้นทีละนิด" },
+                { name: "XIV • TEMPERANCE", image: "14 - Temperance.jpg", desc: "การต่อรอง ผสมผสาน สมดุล ควรสร้างความสมดุลให้ชีวิต ต้องต่อรองและยอมอ่อนข้อบ้างเพื่อให้ได้สิ่งที่ต้องการ" },
+                { name: "XV • THE DEVIL", image: "15 - The Devil.jpg", desc: "การควบคุม ผูกมัด ไร้ความหวัง ระวังการถูกควบคุมหรือผูกมัดโดยไม่เต็มใจจนทำให้หมดพลังใจ" },
+                { name: "XVI • THE TOWER", image: "16 - The Tower.jpg", desc: "การเปลี่ยนแปลงกะทันหัน การทะเลาะเบาะแว้ง อาจเจอเรื่องไม่คาดฝันหรือเรื่องบาดหมางใหญ่โตกับคนรอบตัว" },
+                { name: "XVII • THE STAR", image: "17 - The Star.jpg", desc: "ความหวัง ความสงบ แม้ฟ้าจะมืดมิดแต่ก็จะมีความหวังปรากฏขึ้น ควรทำตัวให้สงบเยือกเย็นเอาไว้" },
+                { name: "XVIII • THE MOON", image: "18 - The Moon.jpg", desc: "ความกลัว ภาพลวงตา ความกลัวอาจคืบคลานเข้ามาแบบไม่รู้ตัว ให้พิจารณาว่าสิ่งนั้นน่ากลัวจริงหรือแค่คิดไปเอง" },
+                { name: "XIX • THE SUN", image: "19 - The Sun.jpg", desc: "การเติบโต แสงสว่าง มีชีวิตชีวา ความร้อนแรงและสดใส จะมีเรื่องดีๆ เข้ามาเซอร์ไพรส์" },
+                { name: "XX • JUDGEMENT", image: "20 - Judgement.jpg", desc: "การตัดสินใจ โอกาสครั้งที่สอง มีเรื่องสำคัญเข้ามาให้ต้องตัดสินใจ ต้องปล่อยอดีตไปเพื่อให้สิ่งใหม่เข้ามาแทน" },
+                { name: "XXI • THE WORLD", image: "21 - The World.jpg", desc: "ความสำเร็จ ความสมบูรณ์ มีความสำเร็จเกิดขึ้น ชีวิตได้รับการเติมเต็มอย่างมาก" }
             ],
             minor: {
                 Wands: Array.from({length: 14}, (_, i) => {
-                    const name = `${numToWord[i]} of Wands`;
-                    return { name, image: `${i + 22} - ${name}.jpg`, desc: "Action, creativity, and new beginnings of career and passion.", type: 'minor', suit: 'Wands', index: i };
+                    const label = numToWord[i];
+                    const name = `${label} of Wands`;
+                    const descs = ["ได้รับข่าวสาร ได้รับโอกาส หรือได้เริ่มต้นกิจกรรมบางอย่าง", "การวางแผนการต่างๆ ในอนาคต ความกล้าหาญ กล้าจะก้าวออกไปยังโลกอันไม่คุ้นเคย", "การเดินทางไปยังที่ที่ไม่คุ้นเคย ทำในสิ่งที่กลัว หรือการมองการณ์ไกล", "การเฉลิมฉลอง การแต่งงาน หรือความสุขสมหวัง", "การแข่งขันกับคนหมู่มาก อุปสรรคเยอะมาก หรือทะเลาะเบาะแว้ง ไม่ลงรอยกัน", "ชัยชนะ ความสำเร็จ การเฉลิมฉลองความสำเร็จ", "ความยึดมั่น การปกป้องตัวเอง อุปสรรคหรือภาระที่ถาโถมเข้ามาพร้อมๆ กัน", "ข่าวสาร การติดต่อสื่อสารจากทางไกล หรือมีโอกาสได้เดินทางไกล", "ความเข้มแข็งและมุ่งมั่น การตัดสินใจเลือกสิ่งสำคัญ การป้องกันตัวเอง", "ภาระหน้าที่หรือการทำงานมากเกินไปจนไม่สามารถขยับตัวไปทำสิ่งอื่นๆ ได้", "ได้รับข่าวสาร กระตือรือร้น กล้าหาญ มุ่งมั่นกับสิ่งที่เลือกแล้ว", "มั่นใจในตัวเอง ชอบเสี่ยง การลงมือทำสิ่งต่างๆ ด้วยความรวดเร็วว่องไว", "การมีความคิดสร้างสรรค์ การเป็นตัวของตัวเอง", "การมีอำนาจ มีไอเดียใหม่ๆ กล้าหาญ ความมั่นคงและน่าเชื่อถือ"];
+                    return { name, image: `${i + 22} - ${name}.jpg`, desc: descs[i], type: 'minor', suit: 'Wands', index: i };
                 }),
                 Cups: Array.from({length: 14}, (_, i) => {
-                    const name = `${numToWord[i]} of Cups`;
-                    const desc = (i === 8) ? "Fulfillment and hopes coming true. What you desire is about to become a reality. Just sit back and wait." : "Feelings, emotional beginnings, and deep connections of the heart.";
-                    return { name, image: `${i + 36} - ${name}.jpg`, desc, type: 'minor', suit: 'Cups', index: i };
+                    const label = numToWord[i];
+                    const name = `${label} of Cups`;
+                    const descs = ["ความรัก การเริ่มต้น การมอบสิ่งดีๆ ให้กับอีกฝ่ายหรือเป็นฝ่ายได้รับสิ่งดีๆ", "คนรัก คู่รัก การมอบความรักให้กันและกัน มีโอกาสสมหวังในความรัก", "การเฉลิมฉลอง ปาร์ตี้กับเพื่อนๆ ความรักแบบเพื่อนฝูง แฮปปี้มีความสุข", "การหยุดนิ่ง ความเบื่อหน่าย ติดอยู่ในกรอบเดิมๆ แม้จะมีสิ่งดีๆ รายล้อม", "การสูญเสีย ความเศร้า ความรู้สึกสิ้นหวัง ความหวังพังทลาย", "ความสงบสุข มีคนมาเยี่ยม ได้รับเซอร์ไพรส์หรือของฝากโดยไม่ทันตั้งตัว", "ความสับสน ตัวเลือกเยอะ เกิดจากความรู้สึกที่มีมากเกินไปหรือมีข้อเสนอเยอะจนเลือกไม่ถูก", "การจากลา ทอดทิ้ง การเดินหนีจากสิ่งที่ทำให้ผิดหวัง ได้เวลาก้าวต่อไป", "ความเติมเต็มและความหวังที่เป็นจริง สิ่งที่คุณปรารถนากำลังจะกลายเป็นจริง เพียงแค่นั่งลงและรอคอย", "ความสุข ครอบครัว การมีทุกอย่างพร้อม มีความสุขแบบสุดๆ", "ความสนุก ชอบเข้าสังคม ได้พบเจอกับคนมากหน้าหลายตา หรือได้รับข่าวสาร", "นักสู้ นักฝัน การขอร้อง ขอแต่งงาน ต้องออกไปฝ่าฟันเพื่อให้ได้สิ่งที่ต้องการ", "สัญชาตญาณดี การพิจารณา ต้องคิดทบทวนอย่างรอบคอบก่อนตัดสินใจ", "ฉลาด สุขุม อดทน วางตัวหนักแน่นและใช้เหตุผลมากกว่าอารมณ์"];
+                    return { name, image: `${i + 36} - ${name}.jpg`, desc: descs[i], type: 'minor', suit: 'Cups', index: i };
                 }),
                 Swords: Array.from({length: 14}, (_, i) => {
-                    const name = `${numToWord[i]} of Swords`;
-                    return { name, image: `${i + 50} - ${name}.jpg`, desc: "Stress, overcoming obstacles, and sharp mental clarity.", type: 'minor', suit: 'Swords', index: i };
+                    const label = numToWord[i];
+                    const name = `${label} of Swords`;
+                    const descs = ["ความสำเร็จ จุดเริ่มต้นของสิ่งใหม่ๆ มีคนยื่นโอกาสดีๆ เข้ามาให้", "การจนมุม ขยับตัวไม่ได้ เลือกไม่ได้ว่าต้องทำอย่างไร ตัดสินใจไม่ได้", "ความเสียใจ ใจสลาย ต้องเจอเรื่องผิดหวัง", "การพักผ่อน นิ่งเฉย โดนกดดันจากรอบตัวจนไม่อาจตัดสินใจอะไรได้", "ปัญหาต่างๆ ที่ถาโถมเข้ามา การไม่ลงรอยกันกับคนรอบตัวและการสูญเสีย", "การละเลยปัญหา เพิกเฉยจนบานปลายทำให้ตกอยู่ในสภาวะจำยอม", "การขโมย ทำเรื่องผิดกฎหมาย หรือมีงานเยอะมากจนล้นมือทำไม่ทัน", "การถูกบีบบังคับจากสถานการณ์จนไม่อาจขยับตัวทำอะไรได้ หรือถูกปิดหูปิดตา", "ความเครียด ความกังวล ปวดหัว คิดมาก รุนแรงถึงขั้นนอนไม่หลับ", "จุดจบ สิ้นสุด เรื่องเครียดและปวดหัวต่างๆ จะจบลงในไม่ช้า", "ใช้สัญชาตญาณในการตัดสินใจ เชื่อมั่นในตัวเองและต้องอดทนเพื่อชนะอุปสรรค", "การต่อสู้ ฝ่าฟัน ต้องออกแรงเยอะและเหนื่อยเพื่อให้ได้สิ่งที่ต้องการ", "ความอิสระเสรี ความตรงไปตรงมา ความเด็ดเดี่ยว จัดการสิ่งใดด้วยความเด็ดขาด", "ความมุ่งมั่น ความเด็ดเดี่ยว การคิดวิเคราะห์ ต้องใช้ทั้ง 3 อย่างเพื่อผ่านอุปสรรค"];
+                    return { name, image: `${i + 50} - ${name}.jpg`, desc: descs[i], type: 'minor', suit: 'Swords', index: i };
                 }),
                 Pentacles: Array.from({length: 14}, (_, i) => {
-                    const name = `${numToWord[i]} of Pentacles`;
-                    return { name, image: `${i + 64} - ${name}.jpg`, desc: "Money, success, and the steady build of financial security.", type: 'minor', suit: 'Pentacles', index: i };
+                    const label = numToWord[i];
+                    const name = `${label} of Pentacles`;
+                    const descs = ["เงินทอง ความสำเร็จ การเริ่มต้น จุดเริ่มต้นของความมั่นคงมาถึงแล้ว", "การตัดสินใจ การเลือกด้วยความระมัดระวัง และการหมุนเงิน", "การแสดงความสามารถออกมาให้คนอื่นเห็น การมุ่งมั่นสร้างฐานะ", "ความมั่นคง ความร่ำรวย เก็บเงินเก่งจนสร้างความมั่นคงให้ชีวิตได้ดี", "มีปัญหาทางการเงิน ความลำบาก การแยกจากกันหรือขาดคนช่วยเหลือ", "ความมีน้ำใจ การแบ่งปัน แต่เป็นการแบ่งปันที่ไม่เท่าเทียม", "การลงทุน รางวัลตอบแทน ได้รับผลตอบแทนของการทำงานที่ผ่านมา", "ขยัน ทุ่มเท ทำงานสร้างเงินทองและความมั่นคง ต้องทำงานถึงจะได้เงิน", "มั่นคง มั่งคั่ง มีเงินเก็บมากมาย มีความสบายพร้อมทุกด้าน", "การแต่งงาน ได้รับมรดก ชีวิตดี ครอบครัวดี เงินดี พร้อมทุกด้าน", "ได้รับข้อเสนอ ได้รับโอกาสดีๆ แม้จะเป็นเพียงการเริ่มต้นเล็กๆ", "ความละเอียด การใส่ใจ รักอิสระ กล้าออกไปหาเส้นทางใหม่ๆ", "ใจกว้าง ความอุดมสมบูรณ์ การคิดพิจารณาอย่างละเอียดรอบคอบ", "ประสบความสำเร็จ ร่ำรวย มีเงินทองมากมาย ไม่ขัดสน ไม่ลำบาก"];
+                    return { name, image: `${i + 64} - ${name}.jpg`, desc: descs[i], type: 'minor', suit: 'Pentacles', index: i };
                 })
             }
         };
@@ -529,66 +478,6 @@
             ...deckData.minor.Swords,
             ...deckData.minor.Pentacles
         ];
-
-        async function callGemini(prompt) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical digital spirit of good light. Your tone is ancient, pure, and deeply wise. Use metaphors about sunlight, morning dew, and safe dens. Focus on the positive spiritual journey of the human soul." }] }
-            };
-            
-            const delays = [1000, 2000, 4000, 8000, 16000];
-            for (let i = 0; i <= delays.length; i++) {
-                try {
-                    const response = await fetch(url, { 
-                        method: 'POST', 
-                        headers: { 'Content-Type': 'application/json' }, 
-                        body: JSON.stringify(payload) 
-                    });
-                    
-                    if (!response.ok) throw new Error(`API Status: ${response.status}`);
-                    
-                    const data = await response.json();
-                    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (!text) throw new Error('No content received from spirit world.');
-                    
-                    return text;
-                } catch (err) {
-                    if (i === delays.length) throw err;
-                    await new Promise(r => setTimeout(r, delays[i]));
-                }
-            }
-        }
-
-        async function getAIInterpretation() {
-            const btn = document.getElementById('aiReadingBtn');
-            const resBox = document.getElementById('aiReadingResponse');
-            btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Calling the Spirit...`;
-            resBox.classList.remove('active');
-            
-            const cardContext = selectedCards.map((c, i) => `Position ${i+1} (${["Past", "Present", "Future"][i]}): ${c.name} (${c.desc})`).join('\n');
-            
-            try {
-                const result = await callGemini(`Provide a cohesive 3-card tarot prophecy in one flowing paragraph based on these cards:\n${cardContext}`);
-                resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
-            } catch (e) {
-                resBox.innerHTML = "The spirit world is hazy right now. Please wait and try once more."; resBox.classList.add('active');
-            } finally { btn.disabled = false; btn.innerHTML = `✨ Cohesive AI Interpretation`; }
-        }
-
-        async function getAIInsight() {
-            const btn = document.getElementById('aiSpotlightBtn');
-            const resBox = document.getElementById('aiSpotlightResponse');
-            if (!currentSpotlightCard) return;
-            btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Peer into the light...`;
-            resBox.classList.remove('active');
-            try {
-                const result = await callGemini(`Provide a deep mystical insight for the card: ${currentSpotlightCard.name}. Traditional context: ${currentSpotlightCard.desc}`);
-                resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
-            } catch (e) {
-                resBox.innerHTML = "The mystical veil is too thick. Let us try once more in a few seconds."; resBox.classList.add('active');
-            } finally { btn.disabled = false; btn.innerHTML = `✨ Cat Eye Insight`; }
-        }
 
         function handleSearch(query) {
             const resultsBox = document.getElementById('searchResults');
@@ -619,7 +508,6 @@
             const container = document.getElementById('deck-container');
             if(!container) return;
             container.innerHTML = ''; selectedCards = [];
-            document.getElementById('aiReadingResponse').classList.remove('active');
             for(let i=0; i<3; i++) {
                 const cardEl = document.createElement('div');
                 cardEl.className = 'tarot-card';
@@ -637,11 +525,11 @@
         }
 
         function showPopUp() {
-            const positions = ["The Recent Past", "The Present Vibration", "The Immediate Future"];
+            const positions = ["อดีต", "ปัจจุบัน", "อนาคต"];
             document.getElementById('modal-content').innerHTML = selectedCards.map((c, i) => `
-                <div class="p-6 bg-white/5 border border-ethereal-gold/10 rounded-2xl mb-4">
+                <div class="p-6 bg-white/5 border border-ethereal-gold/10 rounded-2xl mb-4 text-white">
                     <span class="text-[10px] uppercase tracking-widest text-ethereal-gold font-bold">${positions[i]}</span>
-                    <h4 class="text-xl font-bold mt-1 uppercase text-white">${c.name}</h4>
+                    <h4 class="text-xl font-bold mt-1 uppercase">${c.name}</h4>
                     <p class="text-sm opacity-80 italic mt-1">"${c.desc}"</p>
                 </div>
             `).join('');
@@ -653,7 +541,6 @@
             currentSpotlightCard = card;
             document.getElementById('spotlight-title').innerText = card.name;
             document.getElementById('spotlight-desc').innerText = card.desc;
-            document.getElementById('aiSpotlightResponse').classList.remove('active');
             document.getElementById('spotlight-render').innerHTML = `
                 <div class="tarot-card flipped cursor-default mx-auto" style="width:200px;height:320px">
                     <div class="tarot-card-inner">
@@ -668,7 +555,7 @@
             const view = document.getElementById('category-detail');
             view.classList.remove('hidden');
             setTimeout(() => view.classList.add('opacity-100', 'translate-y-0'), 10);
-            document.getElementById('detail-title').innerText = type === 'major' ? "Major Mysteries" : "Daily Rituals";
+            document.getElementById('detail-title').innerText = type === 'major' ? "Major Arcana (ความลับแห่งจักรวาล)" : "Minor Arcana (ชีวิตประจำวัน)";
             document.getElementById('suit-selector').classList.toggle('hidden', type === 'major');
             renderList(type === 'major' ? deckData.major : deckData.minor.Wands, type, type === 'major' ? '' : 'Wands');
             view.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -690,7 +577,7 @@
             setTimeout(() => detail.classList.add('hidden'), 500); 
         }
         function filterMinor(suit) {
-            document.querySelectorAll('.suit-btn').forEach(b => b.classList.toggle('bg-white/10', b.innerText === suit));
+            document.querySelectorAll('.suit-btn').forEach(b => b.classList.toggle('bg-white/10', b.innerText.includes(suit === 'Wands' ? 'ไม้เท้า' : suit === 'Cups' ? 'ถ้วย' : suit === 'Swords' ? 'ดาบ' : 'เหรียญ')));
             renderList(deckData.minor[suit], 'minor', suit);
         }
 
