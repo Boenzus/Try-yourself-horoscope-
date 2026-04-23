@@ -9,8 +9,8 @@
     <style>
         :root {
             /* Lighter Dark "Good Spirit" Theme Palette */
-            --spirit-bg: #18181b; /* Soft Zinc Dark */
-            --spirit-surface: #27272a; /* Slightly lighter surface */
+            --spirit-bg: #18181b; 
+            --spirit-surface: #27272a;
             --ethereal-gold: #d4af37;
             --champagne: #ece3ce;
             --bone-white: #f4f4f5;
@@ -369,7 +369,7 @@
         </div>
     </section>
 
-    <!-- Ritual Guide Section -->
+    <!-- Ritual Guide -->
     <section id="guide" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl mystic-font text-ethereal-gold mb-4 uppercase tracking-widest">The Sacred Ritual</h2>
@@ -392,22 +392,16 @@
                     <p class="text-sm leading-relaxed opacity-70">Divide the deck into three stacks. Flip the top card of each. From left to right, they represent your **Past**, your **Present**, and your **Future Outcome**.</p>
                 </div>
             </div>
-            
-            <div class="mt-16 p-10 bg-white/5 rounded-[40px] border border-ethereal-gold/10 max-w-3xl mx-auto">
-                <h4 class="mystic-font text-ethereal-gold mb-4">A Note on Interpretation</h4>
-                <p class="text-sm leading-relaxed opacity-80 italic">
-                    "Look first at the images and colors. How do they resonate with your spirit? Major Arcana represent large life themes, while Minor Arcana point to the details of daily existence. The true magic is in how the three cards dance together."
-                </p>
-            </div>
         </div>
     </section>
 
+    <!-- History -->
     <section id="history" class="py-32 px-6 bg-black/20">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl mystic-font text-ethereal-gold mb-12 uppercase tracking-[0.3em]">History of Card</h2>
             <div class="artist-seal rounded-3xl">
                 <h3 class="serif-font italic text-3xl mb-2 text-ethereal-gold">Pamela Colman Smith</h3>
-                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-6">"Pixie" • 1878 – 1951</p>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-6 text-sacred-ink">"Pixie" • 1878 – 1951</p>
                 <div class="h-px w-24 bg-ethereal-gold/40 mx-auto mb-8"></div>
                 <div class="text-bone-white/80 leading-relaxed text-lg space-y-4 max-w-3xl mx-auto font-light text-center">
                     <p>This collection is an eternal tribute to the visionary work of <span class="text-ethereal-gold font-bold">Pamela Colman Smith</span>. A British artist and occultist, her contributions redefined the language of the Tarot.</p>
@@ -418,6 +412,7 @@
         </div>
     </section>
 
+    <!-- Divination -->
     <section id="reading" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">Draw Three Cards</h2>
@@ -429,11 +424,11 @@
     <section id="contact" class="py-32 px-6 bg-black/20 text-center">
         <h2 class="text-3xl mystic-font text-ethereal-gold mb-8 uppercase tracking-widest">Connect with Cat Prophet</h2>
         <div class="h-px w-16 bg-ethereal-gold mx-auto mb-8"></div>
-        <p class="text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto">Should you have questions about the cards or wish to discuss the artistic journey, please reach out via the link below.</p>
+        <p class="text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto">Should you have questions or wish to discuss the artistic journey, please reach out via the link below.</p>
         <a href="mailto:your-email@example.com" class="px-12 py-5 border border-ethereal-gold text-ethereal-gold uppercase tracking-[0.3em] font-bold hover:bg-ethereal-gold hover:text-white transition shadow-lg">Send Email Inquiry</a>
     </section>
 
-    <!-- Modals -->
+    <!-- Spotlight Modal -->
     <div id="spotlightModal" class="modal">
         <div class="max-w-4xl w-full flex flex-col md:flex-row gap-12 items-center bg-[#121214] border border-ethereal-gold/40 p-12 rounded-[40px] relative shadow-2xl">
             <button onclick="closeSpotlight()" class="absolute top-8 right-10 text-4xl text-white/20 hover:text-ethereal-gold transition">&times;</button>
@@ -444,11 +439,12 @@
                 <p id="spotlight-desc" class="text-xl text-white/80 leading-relaxed serif-font italic"></p>
                 <button id="aiSpotlightBtn" onclick="getAIInsight()" class="ai-sparkle-btn">✨ Cat Eye Insight</button>
                 <div id="aiSpotlightResponse" class="ai-response-container"></div>
-                <button onclick="closeSpotlight()" class="px-8 py-3 border border-ethereal-gold text-ethereal-gold text-xs uppercase tracking-widest hover:bg-ethereal-gold hover:text-black transition">Return to Library</button>
+                <button onclick="closeSpotlight()" class="px-8 py-3 border border-gold-leaf text-gold-leaf text-xs uppercase tracking-widest hover:bg-gold-leaf hover:text-black transition">Return to Library</button>
             </div>
         </div>
     </div>
 
+    <!-- Reading Modal -->
     <div id="readingModal" class="modal">
         <div class="bg-[#121214] border border-ethereal-gold/30 p-12 max-w-3xl w-full rounded-[40px] relative shadow-2xl">
             <div class="text-center">
@@ -469,13 +465,14 @@
 
     <footer class="py-24 text-center border-t border-white/5 opacity-60">
         <p class="text-ethereal-gold uppercase tracking-[0.5em] text-[10px] mb-2">&copy; THE ORACLE'S VEIL | CAT PROPHET</p>
-        <p class="text-[9px] tracking-widest opacity-50 uppercase italic">Inspired by the timeless human archetypes of Pamela Colman Smith</p>
+        <p class="text-[9px] tracking-widest opacity-70 uppercase italic text-sacred-ink">Inspired by the archetypes of Pamela Colman Smith</p>
     </footer>
 
     <script>
         const apiKey = "";
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
+        let selectedCards = [];
 
         const deckData = {
             major: [
@@ -504,29 +501,26 @@
             ],
             minor: {
                 Wands: Array.from({length: 14}, (_, i) => {
-                    const label = numToWord[i];
-                    const name = `${label} of Wands`;
+                    const name = `${numToWord[i]} of Wands`;
                     return { name, image: `${i + 22} - ${name}.jpg`, desc: "Action, creativity, and new beginnings of career and passion.", type: 'minor', suit: 'Wands', index: i };
                 }),
                 Cups: Array.from({length: 14}, (_, i) => {
-                    const label = numToWord[i];
-                    const name = `${label} of Cups`;
-                    return { name, image: `${i + 36} - ${name}.jpg`, desc: "Feelings, emotional beginnings, and deep connections of the heart.", type: 'minor', suit: 'Cups', index: i };
+                    const name = `${numToWord[i]} of Cups`;
+                    const specialDesc = (i === 8) ? "Enjoying the success and abundance; emotional satisfaction and deep personal contentment." : "Feelings, emotional beginnings, and deep connections of the heart.";
+                    return { name, image: `${i + 36} - ${name}.jpg`, desc: specialDesc, type: 'minor', suit: 'Cups', index: i };
                 }),
                 Swords: Array.from({length: 14}, (_, i) => {
-                    const label = numToWord[i];
-                    const name = `${label} of Swords`;
+                    const name = `${numToWord[i]} of Swords`;
                     return { name, image: `${i + 50} - ${name}.jpg`, desc: "Stress, overcoming obstacles, and sharp mental clarity.", type: 'minor', suit: 'Swords', index: i };
                 }),
                 Pentacles: Array.from({length: 14}, (_, i) => {
-                    const label = numToWord[i];
-                    const name = `${label} of Pentacles`;
+                    const name = `${numToWord[i]} of Pentacles`;
                     return { name, image: `${i + 64} - ${name}.jpg`, desc: "Money, success, and the steady build of financial security.", type: 'minor', suit: 'Pentacles', index: i };
                 })
             }
         };
 
-        const allCards = [
+        const allCardsFlat = [
             ...deckData.major.map((c, i) => ({ ...c, type: 'major', index: i, suit: '' })),
             ...deckData.minor.Wands,
             ...deckData.minor.Cups,
@@ -538,18 +532,25 @@
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical digital spirit of good light. Your tone is ancient, pure, and deeply wise. Use metaphors about sunlight, morning dew, high ledges, and safe dens. Focus on the positive spiritual journey of the human soul." }] }
+                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical digital spirit of good light. Your tone is ancient, pure, and deeply wise. Use metaphors about sunlight, high ledges, and safe dens. Focus on the positive spiritual journey of the human soul." }] }
             };
-            const retryCount = 5; let delay = 1000;
-            for (let i = 0; i < retryCount; i++) {
+            
+            const retryDelays = [1000, 2000, 4000, 8000];
+            for (let i = 0; i <= retryDelays.length; i++) {
                 try {
-                    const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                    if (!response.ok) throw new Error('API Error');
+                    const response = await fetch(url, { 
+                        method: 'POST', 
+                        headers: { 'Content-Type': 'application/json' }, 
+                        body: JSON.stringify(payload) 
+                    });
+                    if (!response.ok) throw new Error(`API: ${response.status}`);
                     const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "The Oracle is silent today...";
+                    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (!text) throw new Error('No content');
+                    return text;
                 } catch (err) {
-                    if (i === retryCount - 1) throw err;
-                    await new Promise(r => setTimeout(r, delay)); delay *= 2;
+                    if (i === retryDelays.length) throw err;
+                    await new Promise(r => setTimeout(r, retryDelays[i]));
                 }
             }
         }
@@ -559,12 +560,12 @@
             const resBox = document.getElementById('aiReadingResponse');
             btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Calling the Spirit...`;
             resBox.classList.remove('active');
-            const cardContext = selectedCards.map((c, i) => `Position ${i+1}: ${c.name} - Meaning: ${c.desc}`).join('\n');
+            const cardContext = selectedCards.map((c, i) => `Position ${i+1}: ${c.name} (${c.desc})`).join('\n');
             try {
-                const result = await callGemini(`Interpret these 3 cards into one flowing prophecy:\n${cardContext}`);
+                const result = await callGemini(`Provide a cohesive 3-card tarot reading based on these draws:\n${cardContext}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "The spirit world is hazy. Try again."; resBox.classList.add('active');
+                resBox.innerHTML = "The spirit world is hazy right now. Please wait and try once more."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cohesive AI Interpretation`; }
         }
 
@@ -575,17 +576,17 @@
             btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Peer into the light...`;
             resBox.classList.remove('active');
             try {
-                const result = await callGemini(`Deep insight for ${currentSpotlightCard.name}: ${currentSpotlightCard.desc}`);
+                const result = await callGemini(`Provide a deep mystical insight for the card: ${currentSpotlightCard.name}. Meaning: ${currentSpotlightCard.desc}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "My vision is blurred. Try once more."; resBox.classList.add('active');
+                resBox.innerHTML = "The mystical veil is too thick. Let us try once more in a few seconds."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cat Eye Insight`; }
         }
 
         function handleSearch(query) {
             const resultsBox = document.getElementById('searchResults');
             if (!query) { resultsBox.classList.remove('active'); return; }
-            const filtered = allCards.filter(c => c.name.toLowerCase().includes(query.toLowerCase())).slice(0, 10);
+            const filtered = allCardsFlat.filter(c => c.name.toLowerCase().includes(query.toLowerCase())).slice(0, 10);
             if (filtered.length > 0) {
                 resultsBox.innerHTML = filtered.map(c => `<div class="search-item" onclick="openBySearch('${c.type}', ${c.index}, '${c.suit}')">${c.name}</div>`).join('');
                 resultsBox.classList.add('active');
@@ -607,7 +608,6 @@
             </div>`;
         }
 
-        let selectedCards = [];
         function initDeck() {
             const container = document.getElementById('deck-container');
             if(!container) return;
@@ -619,7 +619,7 @@
                 cardEl.innerHTML = `<div class="tarot-card-inner"><div class="card-face card-back"></div><div class="card-face card-front"></div></div>`;
                 cardEl.onclick = function() {
                     if (this.classList.contains('flipped') || selectedCards.length >= 3) return;
-                    const card = allCards[Math.floor(Math.random() * allCards.length)];
+                    const card = allCardsFlat[Math.floor(Math.random() * allCardsFlat.length)];
                     this.querySelector('.card-front').innerHTML = getCardHTML(card).replace('<div class="card-face card-front">', '').replace('</div>', '');
                     this.classList.add('flipped');
                     selectedCards.push(card);
@@ -669,7 +669,7 @@
 
         function renderList(cards, type, suit) {
             document.getElementById('detail-list').innerHTML = cards.map((c, index) => `
-                <div onclick="openSpotlightByIndex('${type}', ${index}, '${suit}')" class="p-4 bg-white/5 border border-white/5 rounded-xl cursor-pointer hover:border-ethereal-gold transition text-center text-xs uppercase tracking-widest">
+                <div onclick="openSpotlightByIndex('${type}', ${index}, '${suit}')" class="p-4 bg-white/5 border border-white/5 rounded-xl cursor-pointer hover:border-ethereal-gold transition text-center text-xs uppercase tracking-widest text-white">
                     ${c.name}${c.image ? '<span class="has-image-indicator">⭐</span>' : ''}
                 </div>
             `).join('');
