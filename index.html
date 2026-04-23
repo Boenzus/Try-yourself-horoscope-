@@ -9,13 +9,13 @@
     <style>
         :root {
             /* Lighter Dark "Good Spirit" Theme Palette */
-            --spirit-bg: #18181b; 
-            --spirit-surface: #27272a;
+            --spirit-bg: #1a1a1e; 
+            --spirit-surface: #2a2a30;
             --ethereal-gold: #d4af37;
             --champagne: #ece3ce;
             --bone-white: #f4f4f5;
             --mystic-lavender: #a78bfa;
-            --soft-glow: rgba(212, 175, 55, 0.1);
+            --soft-glow: rgba(212, 175, 55, 0.15);
         }
 
         body {
@@ -31,7 +31,7 @@
 
         .stars-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1e1e24 0%, #18181b 100%);
+            background: radial-gradient(circle at 50% 50%, #212126 0%, #1a1a1e 100%);
         }
 
         .nav-link {
@@ -42,7 +42,7 @@
             color: rgba(244, 244, 245, 0.7);
             transition: all 0.3s;
         }
-        .nav-link:hover { color: var(--ethereal-gold); text-shadow: 0 0 8px var(--ethereal-gold); }
+        .nav-link:hover { color: var(--ethereal-gold); text-shadow: 0 0 10px var(--ethereal-gold); }
 
         /* Search Box Styling */
         .search-container {
@@ -56,16 +56,16 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             padding: 8px 18px;
             border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
         }
         .search-wrapper:focus-within {
             border-color: var(--ethereal-gold);
-            background: rgba(255,255,255,0.1);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
         }
         .search-input {
             background: transparent;
@@ -73,11 +73,11 @@
             color: white;
             font-size: 0.75rem;
             outline: none;
-            width: 130px;
+            width: 140px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        .search-input:focus { width: 200px; }
+        .search-input:focus { width: 220px; }
         .search-results {
             position: absolute;
             top: calc(100% + 12px);
@@ -90,8 +90,8 @@
             overflow-y: auto;
             z-index: 100;
             display: none;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+            backdrop-filter: blur(15px);
         }
         .search-results.active { display: block; }
         .search-item {
@@ -102,7 +102,7 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             transition: all 0.2s;
         }
-        .search-item:hover { background: rgba(212, 175, 55, 0.15); color: var(--ethereal-gold); padding-left: 24px; }
+        .search-item:hover { background: rgba(212, 175, 55, 0.2); color: var(--ethereal-gold); padding-left: 24px; }
 
         /* Tarot Card Logic */
         .tarot-card {
@@ -130,8 +130,8 @@
             backface-visibility: hidden;
             border-radius: 12px;
             border: 3px solid var(--ethereal-gold);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            background: #09090b;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            background: #0f0f12;
             overflow: hidden;
             pointer-events: none;
             display: flex; flex-direction: column;
@@ -153,7 +153,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            background-color: #09090b;
+            background-color: #0c0c0e;
         }
 
         .card-border-inner {
@@ -162,7 +162,7 @@
             display: flex; flex-direction: column;
             padding: 8px;
             height: 100%;
-            background: #09090b;
+            background: #0c0c0e;
         }
 
         .card-title-plate {
@@ -187,7 +187,7 @@
             margin-bottom: 2.5rem;
             font-size: 0.9rem;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
         .hero-btn {
@@ -214,7 +214,7 @@
         .step-card:hover {
             transform: translateY(-8px);
             border-color: var(--ethereal-gold);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
         }
         .step-num {
             font-family: 'Cinzel', serif;
@@ -227,7 +227,7 @@
         /* Modals */
         .modal {
             display: none; position: fixed; inset: 0; z-index: 100;
-            background: rgba(9, 9, 11, 0.92); backdrop-filter: blur(12px);
+            background: rgba(12, 12, 14, 0.94); backdrop-filter: blur(15px);
             align-items: center; justify-content: center; padding: 20px;
         }
         .modal.active { display: flex; }
@@ -256,7 +256,7 @@
         }
         .ai-sparkle-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(167, 139, 250, 0.5);
+            box-shadow: 0 6px 25px rgba(167, 139, 250, 0.5);
         }
         .ai-response-container {
             margin-top: 20px;
@@ -284,12 +284,12 @@
 
         .search-decoration {
             font-size: 1.4rem;
-            filter: drop-shadow(0 0 8px var(--ethereal-gold));
+            filter: drop-shadow(0 0 10px var(--ethereal-gold));
             animation: purr 3s infinite ease-in-out;
         }
         @keyframes purr { 
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-3px) rotate(5deg); }
+            50% { transform: translateY(-4px) rotate(4deg); }
         }
     </style>
 </head>
@@ -339,7 +339,7 @@
     </header>
 
     <!-- Archive -->
-    <section id="article" class="py-32 px-6 bg-black/20">
+    <section id="article" class="py-32 px-6 bg-black/30">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-4xl mystic-font text-ethereal-gold mb-16 uppercase tracking-widest">The Celestial Library</h2>
             <div class="grid md:grid-cols-2 gap-10">
@@ -348,7 +348,7 @@
                     <p class="text-xs opacity-60">The 22 Primary Archetypes</p>
                 </div>
                 <div onclick="showCategory('minor')" class="p-10 bg-white/5 border border-white/10 rounded-3xl cursor-pointer hover:border-ethereal-gold hover:shadow-2xl transition group">
-                    <h3 class="text-ethereal-gold font-bold mb-2 uppercase text-2xl group-hover:scale-105 transition-transform">Minor Arcana</h3>
+                    <h3 class="text-gold-leaf font-bold mb-2 uppercase text-2xl group-hover:scale-105 transition-transform">Minor Arcana</h3>
                     <p class="text-xs opacity-60">The 56 Daily Rituals of Life</p>
                 </div>
             </div>
@@ -395,13 +395,12 @@
         </div>
     </section>
 
-    <!-- History -->
     <section id="history" class="py-32 px-6 bg-black/20">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl mystic-font text-ethereal-gold mb-12 uppercase tracking-[0.3em]">History of Card</h2>
             <div class="artist-seal rounded-3xl">
                 <h3 class="serif-font italic text-3xl mb-2 text-ethereal-gold">Pamela Colman Smith</h3>
-                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-6 text-sacred-ink">"Pixie" • 1878 – 1951</p>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-6 text-bone-white">"Pixie" • 1878 – 1951</p>
                 <div class="h-px w-24 bg-ethereal-gold/40 mx-auto mb-8"></div>
                 <div class="text-bone-white/80 leading-relaxed text-lg space-y-4 max-w-3xl mx-auto font-light text-center">
                     <p>This collection is an eternal tribute to the visionary work of <span class="text-ethereal-gold font-bold">Pamela Colman Smith</span>. A British artist and occultist, her contributions redefined the language of the Tarot.</p>
@@ -412,7 +411,6 @@
         </div>
     </section>
 
-    <!-- Divination -->
     <section id="reading" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">Draw Three Cards</h2>
@@ -439,7 +437,7 @@
                 <p id="spotlight-desc" class="text-xl text-white/80 leading-relaxed serif-font italic"></p>
                 <button id="aiSpotlightBtn" onclick="getAIInsight()" class="ai-sparkle-btn">✨ Cat Eye Insight</button>
                 <div id="aiSpotlightResponse" class="ai-response-container"></div>
-                <button onclick="closeSpotlight()" class="px-8 py-3 border border-gold-leaf text-gold-leaf text-xs uppercase tracking-widest hover:bg-gold-leaf hover:text-black transition">Return to Library</button>
+                <button onclick="closeSpotlight()" class="px-8 py-3 border border-ethereal-gold text-ethereal-gold text-xs uppercase tracking-widest hover:bg-ethereal-gold hover:text-white transition">Return to Library</button>
             </div>
         </div>
     </div>
@@ -465,39 +463,39 @@
 
     <footer class="py-24 text-center border-t border-white/5 opacity-60">
         <p class="text-ethereal-gold uppercase tracking-[0.5em] text-[10px] mb-2">&copy; THE ORACLE'S VEIL | CAT PROPHET</p>
-        <p class="text-[9px] tracking-widest opacity-70 uppercase italic text-sacred-ink">Inspired by the archetypes of Pamela Colman Smith</p>
+        <p class="text-[9px] tracking-widest opacity-70 uppercase italic text-bone-white">Inspired by the archetypes of Pamela Colman Smith</p>
     </footer>
 
     <script>
-        const apiKey = "";
+        const apiKey = ""; // Environment provides key at runtime.
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
         let selectedCards = [];
 
         const deckData = {
             major: [
-                { name: "0 • The Fool", image: "00 - The Fool.jpg", desc: "Starting something new and taking risks. Indicates a person who knows they are taking a risk but wants to try. Pure spirit of adventure." },
-                { name: "I • The Magician", image: "01 - The Magician.jpg", desc: "Requires ambition and action. You have the inherent skill to manifest results through your own focused will." },
-                { name: "II • High Priestess", image: "02 - The High Priestess.jpg", desc: "Intelligent, knowledgeable, and capable. She keeps her abilities hidden, only speaking out when necessary. Trust the unrevealed truth." },
-                { name: "III • The Empress", image: "03 - The Empress.jpg", desc: "Representing motherhood, happiness, comfort, and wealth. These are opportunities that can be seized now." },
-                { name: "IV • The Emperor", image: "04 - The Emperor.jpg", desc: "Often bossy and unwilling to yield. A situation where one must comply with the orders of elders or established authority." },
-                { name: "V • The Hierophant", image: "05 - The Hierophant.jpg", desc: "Effective performance and traditional knowledge. Represents a unified family or a knowledgeable representative in your life path." },
-                { name: "VI • The Lovers", image: "06 - The Lovers.jpg", desc: "Passion, representing recognized love or a difficult decision that must be made with the heart." },
-                { name: "VII • The Chariot", image: "07 - The Chariot.jpg", desc: "Steadfastness and diligence are key. This card signifies achieving success through sheer determination." },
-                { name: "VIII • Strength", image: "08 - Strength.jpg", desc: "The powerful motherboard representing the highest authority; nothing can harm her. She controls the systems of the night." },
-                { name: "IX • The Hermit", image: "09 - The Hermit.jpg", desc: "Solitude and healing the mind. Apply this time for analytical thinking and avoid hasty or decisive actions." },
-                { name: "X • Wheel of Fortune", image: "10 - Wheel of Fortune.jpg", desc: "Change is possible and unexpected. Preparation is not necessary, as cycles of luck will turn as they will." },
-                { name: "XI • Justice", image: "11 - Justice.jpg", desc: "Decision-making, equality, and law. You will receive justice and balance will be restored in your matters." },
-                { name: "XII • The Hanged Man", image: "12 - The Hanged Man.jpg", desc: "Waiting and sacrifice. You may be unable to make a decision, requiring you to remain still or sacrifice personal happiness." },
-                { name: "XIII • Death", image: "13 - Death.jpg", desc: "Change and rebirth. Turning bad things into good; situations will gradually improve through transformation." },
-                { name: "XIV • Temperance", image: "14 - Temperance.jpg", desc: "Negotiation, blending, and balance. Create harmony in your life by compromising to get what you want." },
-                { name: "XV • The Devil", image: "15 - The Devil.jpg", desc: "Control, bondage, and hopelessness. Be careful of being unwillingly bound or losing your willpower to external forces." },
-                { name: "XVI • The Tower", image: "16 - The Tower.jpg", desc: "Sudden change and conflict. Prepare for unexpected events or unforeseen news that may cause major shifts." },
-                { name: "XVII • The Star", image: "17 - The Star.jpg", desc: "Hope and peace. A glimmer of hope appearing even in the darkest times. Maintain a calm and composed demeanor." },
-                { name: "XVIII • The Moon", image: "18 - The Moon.jpg", desc: "Fear and illusion. Consider carefully whether your fears are real or merely illusions creeping in unexpectedly." },
-                { name: "XIX • The Sun", image: "19 - The Sun.jpg", desc: "Growth, light, and vitality. Passion and vibrancy lead to a positive surprise coming your way soon." },
-                { name: "XX • Judgement", image: "20 - Judgement.jpg", desc: "Decision-making and a second chance. Let go of the past to make room for new importantes choices." },
-                { name: "XXI • The World", image: "21 - The World.jpg", desc: "Success and fulfillment. A very positive card signifying a successful conclusion and a fulfilling life." }
+                { name: "0 • THE CAT (FOOL)", image: "00 - The Fool.jpg", desc: "Starting something new and taking risks. Indicates a person who knows they are taking a risk but wants to try. Pure spirit of adventure." },
+                { name: "I • THE MAGICIAN", image: "01 - The Magician.jpg", desc: "Requires ambition and action. You have the inherent skill to manifest results through your own focused will." },
+                { name: "II • HIGH PRIESTESS", image: "02 - The High Priestess.jpg", desc: "Intelligent, knowledgeable, and capable. She keeps her abilities hidden, only speaking out when necessary. Trust the unrevealed truth." },
+                { name: "III • THE EMPRESS", image: "03 - The Empress.jpg", desc: "Representing motherhood, happiness, comfort, and wealth. These are opportunities that can be seized now." },
+                { name: "IV • THE EMPEROR", image: "04 - The Emperor.jpg", desc: "Often bossy and unwilling to yield. A situation where one must comply with the orders of elders or established authority." },
+                { name: "V • THE HIEROPHANT", image: "05 - The Hierophant.jpg", desc: "Effective performance and traditional knowledge. Represents a unified family or a knowledgeable representative in your life path." },
+                { name: "VI • THE LOVERS", image: "06 - The Lovers.jpg", desc: "Passion, representing recognized love or a difficult decision that must be made with the heart." },
+                { name: "VII • THE CHARIOT", image: "07 - The Chariot.jpg", desc: "Steadfastness and diligence are key. This card signifies achieving success through sheer determination." },
+                { name: "VIII • STRENGTH", image: "08 - Strength.jpg", desc: "The powerful motherboard representing the highest authority; nothing can harm her. She controls the systems of the night." },
+                { name: "IX • THE HERMIT", image: "09 - The Hermit.jpg", desc: "Solitude and healing the mind. Apply this time for analytical thinking and avoid hasty or decisive actions." },
+                { name: "X • WHEEL OF FORTUNE", image: "10 - Wheel of Fortune.jpg", desc: "Change is possible and unexpected. Preparation is not necessary, as cycles of luck will turn as they will." },
+                { name: "XI • JUSTICE", image: "11 - Justice.jpg", desc: "Decision-making, equality, and law. You will receive justice and balance will be restored in your matters." },
+                { name: "XII • THE HANGED CAT", image: "12 - The Hanged Man.jpg", desc: "Waiting and sacrifice. You may be unable to make a decision, requiring you to remain still or sacrifice personal happiness." },
+                { name: "XIII • DEATH", image: "13 - Death.jpg", desc: "Change and rebirth. Turning bad things into good; situations will gradually improve through transformation." },
+                { name: "XIV • TEMPERANCE", image: "14 - Temperance.jpg", desc: "Negotiation, blending, and balance. Create harmony in your life by compromising to get what you want." },
+                { name: "XV • THE DEVIL", image: "15 - The Devil.jpg", desc: "Control, bondage, and hopelessness. Be careful of being unwillingly bound or losing your willpower to external forces." },
+                { name: "XVI • THE TOWER", image: "16 - The Tower.jpg", desc: "Sudden change and conflict. Prepare for unexpected events or unforeseen news that may cause major shifts." },
+                { name: "XVII • THE STAR", image: "17 - The Star.jpg", desc: "Hope and peace. A glimmer of hope appearing even in the darkest times. Maintain a calm and composed demeanor." },
+                { name: "XVIII • THE MOON", image: "18 - The Moon.jpg", desc: "Fear and illusion. Consider carefully whether your fears are real or merely illusions creeping in unexpectedly." },
+                { name: "XIX • THE SUN", image: "19 - The Sun.jpg", desc: "Growth, light, and vitality. Passion and vibrancy lead to a positive surprise coming your way soon." },
+                { name: "XX • JUDGEMENT", image: "20 - Judgement.jpg", desc: "Decision-making and a second chance. Let go of the past to make room for new importantes choices." },
+                { name: "XXI • THE WORLD", image: "21 - The World.jpg", desc: "Success and fulfillment. A very positive card signifying a successful conclusion and a fulfilling life." }
             ],
             minor: {
                 Wands: Array.from({length: 14}, (_, i) => {
@@ -506,7 +504,7 @@
                 }),
                 Cups: Array.from({length: 14}, (_, i) => {
                     const name = `${numToWord[i]} of Cups`;
-                    const specialDesc = (i === 8) ? "Enjoying the success and abundance; emotional satisfaction and deep personal contentment." : "Feelings, emotional beginnings, and deep connections of the heart.";
+                    const specialDesc = (i === 8) ? "Fulfillment and hopes coming true. What you desire is about to become a reality. Just sit back and wait." : "Feelings, emotional beginnings, and deep connections of the heart.";
                     return { name, image: `${i + 36} - ${name}.jpg`, desc: specialDesc, type: 'minor', suit: 'Cups', index: i };
                 }),
                 Swords: Array.from({length: 14}, (_, i) => {
@@ -528,14 +526,15 @@
             ...deckData.minor.Pentacles
         ];
 
+        // --- ENHANCED AI CALLING WITH EXPONENTIAL BACKOFF ---
         async function callGemini(prompt) {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
-                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical digital spirit of good light. Your tone is ancient, pure, and deeply wise. Use metaphors about sunlight, high ledges, and safe dens. Focus on the positive spiritual journey of the human soul." }] }
+                systemInstruction: { parts: [{ text: "You are the Cat Prophet, a mystical spirit of pure light. Speak in a wise, ancient, feline-inspired tone. Use metaphors about sunlight and morning dew. Interpret the human soul's journey with clarity." }] }
             };
             
-            const retryDelays = [1000, 2000, 4000, 8000];
+            const retryDelays = [1000, 2000, 4000, 8000, 16000];
             for (let i = 0; i <= retryDelays.length; i++) {
                 try {
                     const response = await fetch(url, { 
@@ -546,7 +545,7 @@
                     if (!response.ok) throw new Error(`API: ${response.status}`);
                     const data = await response.json();
                     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (!text) throw new Error('No content');
+                    if (!text) throw new Error('No content from spirit world.');
                     return text;
                 } catch (err) {
                     if (i === retryDelays.length) throw err;
@@ -562,10 +561,10 @@
             resBox.classList.remove('active');
             const cardContext = selectedCards.map((c, i) => `Position ${i+1}: ${c.name} (${c.desc})`).join('\n');
             try {
-                const result = await callGemini(`Provide a cohesive 3-card tarot reading based on these draws:\n${cardContext}`);
+                const result = await callGemini(`Provide a cohesive 3-card tarot reading in one paragraph:\n${cardContext}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "The spirit world is hazy right now. Please wait and try once more."; resBox.classList.add('active');
+                resBox.innerHTML = "The spirit world is hazy. Please check your connection and try again."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cohesive AI Interpretation`; }
         }
 
@@ -576,10 +575,10 @@
             btn.disabled = true; btn.innerHTML = `<span class="loading-spinner"></span> Peer into the light...`;
             resBox.classList.remove('active');
             try {
-                const result = await callGemini(`Provide a deep mystical insight for the card: ${currentSpotlightCard.name}. Meaning: ${currentSpotlightCard.desc}`);
+                const result = await callGemini(`Deep insight for ${currentSpotlightCard.name}. Traditional meaning: ${currentSpotlightCard.desc}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
-                resBox.innerHTML = "The mystical veil is too thick. Let us try once more in a few seconds."; resBox.classList.add('active');
+                resBox.innerHTML = "The mystical veil is too thick. Try again in a moment."; resBox.classList.add('active');
             } finally { btn.disabled = false; btn.innerHTML = `✨ Cat Eye Insight`; }
         }
 
