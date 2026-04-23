@@ -467,7 +467,11 @@
     </footer>
 
     <script>
-        const apiKey = ""; // Runtime key provided by platform.
+        // API KEY REQUIREMENT: 
+        // For the AI features to work on your live GitHub website, you MUST 
+        // get a free API Key from https://aistudio.google.com/ and paste it below.
+        const apiKey = ""; 
+
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
         let selectedCards = [];
@@ -526,7 +530,6 @@
             ...deckData.minor.Pentacles
         ];
 
-        // --- ENHANCED AI CALLING WITH STRICT RETRY LOGIC ---
         async function callGemini(prompt) {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             const payload = {
@@ -543,7 +546,7 @@
                         body: JSON.stringify(payload) 
                     });
                     
-                    if (!response.ok) throw new Error(`API: ${response.status}`);
+                    if (!response.ok) throw new Error(`API Status: ${response.status}`);
                     
                     const data = await response.json();
                     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -566,7 +569,7 @@
             const cardContext = selectedCards.map((c, i) => `Position ${i+1} (${["Past", "Present", "Future"][i]}): ${c.name} (${c.desc})`).join('\n');
             
             try {
-                const result = await callGemini(`Provide a cohesive 3-card tarot prophecy in one flowing paragraph:\n${cardContext}`);
+                const result = await callGemini(`Provide a cohesive 3-card tarot prophecy in one flowing paragraph based on these cards:\n${cardContext}`);
                 resBox.innerHTML = result.replace(/\n/g, '<br>'); resBox.classList.add('active');
             } catch (e) {
                 resBox.innerHTML = "The spirit world is hazy right now. Please wait and try once more."; resBox.classList.add('active');
