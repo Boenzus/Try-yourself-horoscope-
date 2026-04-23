@@ -164,14 +164,58 @@
         .card-title-plate {
             margin-top: auto; padding: 6px;
             border-top: 1px solid var(--ethereal-gold);
-            font-family: 'Cinzel', serif; font-size: 0.55rem;
+            font-family: 'Cinzel', serif; font-size: 0.65rem;
             text-transform: uppercase; letter-spacing: 1px;
             color: var(--ethereal-gold); background: #000;
             width: 100%; z-index: 2;
             text-align: center;
         }
 
-        /* Hero Pill Styling */
+        /* Hero Container & Decorations */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            position: relative;
+            z-index: 10;
+            text-shadow: 0 0 30px rgba(0,0,0,1);
+            line-height: 1.1;
+        }
+
+        .floating-card-decor {
+            position: absolute;
+            width: 130px;
+            height: 210px;
+            border: 2px solid var(--ethereal-gold);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            opacity: 0.45;
+            animation: float-mystic 10s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1;
+            background: #000;
+        }
+
+        @keyframes float-mystic {
+            0%, 100% { transform: translateY(0) rotate(var(--rotate-start)); filter: brightness(0.8); }
+            50% { transform: translateY(-30px) rotate(var(--rotate-mid)); filter: brightness(1.1); }
+        }
+
+        /* Hero Card Positions */
+        .decor-1 { top: 10%; left: 8%; --rotate-start: -15deg; --rotate-mid: -8deg; animation-delay: 0s; }
+        .decor-2 { bottom: 15%; left: 12%; --rotate-start: 12deg; --rotate-mid: 20deg; animation-delay: 2s; }
+        .decor-3 { top: 15%; right: 10%; --rotate-start: 10deg; --rotate-mid: 4deg; animation-delay: 1s; }
+        .decor-4 { bottom: 12%; right: 15%; --rotate-start: -10deg; --rotate-mid: -18deg; animation-delay: 3.5s; }
+
         .hero-pill {
             background-color: var(--spirit-surface);
             color: var(--ethereal-gold);
@@ -184,6 +228,8 @@
             font-size: 1rem;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
         }
 
         .hero-btn {
@@ -194,10 +240,11 @@
             letter-spacing: 0.1em;
             transition: all 0.3s;
             display: inline-block;
+            position: relative;
+            z-index: 10;
         }
         .hero-btn:hover { background: var(--bone-white); color: var(--spirit-bg); }
 
-        /* Guide Card Styling */
         .step-card {
             background: var(--spirit-surface);
             border: 1px solid rgba(212, 175, 55, 0.1);
@@ -218,7 +265,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Modals */
         .modal {
             display: none; position: fixed; inset: 0; z-index: 100;
             background: rgba(12, 12, 14, 0.94); backdrop-filter: blur(15px);
@@ -277,9 +323,23 @@
         </div>
     </nav>
 
-    <header class="h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
-        <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tight text-white leading-[0.9]">
-            UNVEIL THE<br>SECRET WISDOM
+    <header class="hero-container pt-20 px-4 text-center">
+        <!-- Floating Card Decorations Around the Title -->
+        <div class="floating-card-decor decor-1">
+            <img src="00 - The Fool.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/130x210/000000/d4af37?text=The+Fool'">
+        </div>
+        <div class="floating-card-decor decor-2">
+            <img src="17 - The Star.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/130x210/000000/d4af37?text=The+Star'">
+        </div>
+        <div class="floating-card-decor decor-3">
+            <img src="19 - The Sun.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/130x210/000000/d4af37?text=The+Sun'">
+        </div>
+        <div class="floating-card-decor decor-4">
+            <img src="21 - The World.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/130x210/000000/d4af37?text=The+World'">
+        </div>
+
+        <h1 class="hero-title text-6xl md:text-8xl font-black mb-6 uppercase tracking-tight text-white leading-[0.9]">
+            อ่านไพ่<br>ด้วยตัวเอง
         </h1>
         <div class="hero-pill">
             การตีความไพ่ทาโรต์ 78 ใบ โดย Cat Prophet
@@ -339,8 +399,8 @@
                 </div>
                 <div class="step-card">
                     <div class="step-num">03</div>
-                    <h3 class="font-bold uppercase tracking-widest mb-4">การจั่วไพ่สามใบ</h3>
-                    <p class="text-sm leading-relaxed opacity-70">แบ่งกองไพ่ออกเป็นสามกองเท่าๆ กัน หงายไพ่ใบบนสุดของแต่ละกองขึ้น จากซ้ายไปขวา ไพ่เหล่านี้จะแทน **อดีต**, **ปัจจุบัน** และ **ผลลัพธ์ในอนาคต** ของคุณ</p>
+                    <h3 class="font-bold uppercase tracking-widest mb-4">การเปิดไพ่สามใบ</h3>
+                    <p class="text-sm leading-relaxed opacity-70">แบ่งกองไพ่ออกเป็นสามกองเท่าๆ กัน เปิดไพ่ใบบนสุดของแต่ละกองขึ้น จากซ้ายไปขวา ไพ่เหล่านี้จะแทน **อดีต**, **ปัจจุบัน** และ **ผลลัพธ์ในอนาคต** ของคุณ</p>
                 </div>
             </div>
         </div>
@@ -356,7 +416,6 @@
                 <div class="text-bone-white/80 leading-relaxed text-lg space-y-4 max-w-3xl mx-auto font-light text-center">
                     <p>คอลเลกชันนี้เป็นการระลึกถึงผลงานที่มีวิสัยทัศน์ของ <span class="text-ethereal-gold font-bold">Pamela Colman Smith</span> ศิลปินและนักไสยศาสตร์ชาวบริติช ผู้ปฏิรูปภาษาของไพ่ทาโรต์สำหรับยุคสมัยใหม่</p>
                     <p>ในปี 1909 เธอได้สร้างประวัติศาสตร์: เธอเป็นคน <span class="italic">แรก</span> ที่วาดภาพไพ่ชุดรอง (Minor Arcana) ด้วยภาพเหตุการณ์ที่เต็มไปด้วยผู้คน เปลี่ยนสัญลักษณ์ง่ายๆ ให้กลายเป็นเรื่องราวทางจิตวิทยาที่ลึกซึ้ง</p>
-                    <p class="text-sm opacity-60">Cat Prophet เฉลิมฉลองต้นแบบงานเขียนของเธอ โดยการตีความใหม่ผ่านมุมมองที่เน้นเรื่องแมวอย่างทุ่มเท</p>
                 </div>
             </div>
         </div>
@@ -365,7 +424,7 @@
     <!-- Divination Section -->
     <section id="reading" class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">จั่วไพ่สามใบ</h2>
+            <h2 class="text-5xl mystic-font text-white mb-6 uppercase tracking-widest text-center">เปิดไพ่สามใบ</h2>
             <p class="text-ethereal-gold italic mb-20 text-xl serif-font text-center">ตั้งสมาธิและเปิดรับแรงสั่นสะเทือนของคุณ</p>
             <div id="deck-container" class="flex flex-wrap justify-center gap-12"></div>
         </div>
@@ -379,7 +438,7 @@
         <a href="mailto:your-email@example.com" class="px-12 py-5 border border-ethereal-gold text-ethereal-gold uppercase tracking-[0.3em] font-bold hover:bg-ethereal-gold hover:text-white transition shadow-lg">ส่งอีเมลสอบถาม</a>
     </section>
 
-    <!-- Modal for Spotlighting Single Card -->
+    <!-- Spotlight Modal -->
     <div id="spotlightModal" class="modal">
         <div class="max-w-4xl w-full flex flex-col md:flex-row gap-12 items-center bg-[#121214] border border-ethereal-gold/40 p-12 rounded-[40px] relative shadow-2xl">
             <button onclick="closeSpotlight()" class="absolute top-8 right-10 text-4xl text-white/20 hover:text-ethereal-gold transition">&times;</button>
@@ -401,7 +460,7 @@
                 <div id="modal-content" class="space-y-6 text-left max-h-[45vh] overflow-y-auto px-4 mt-8 text-white"></div>
                 <div class="warning-tag">
                     <p class="font-black mb-2 uppercase tracking-widest text-xs">⚠️ คำเตือนอันศักดิ์สิทธิ์</p>
-                    <p class="italic text-sm">โชคชะตาต้องใช้เวลาในการปรากฏผล โปรดอย่าจั่วไพ่ซ้ำในเรื่องเดิมเป็นเวลาอย่างน้อย 3 เดือน</p>
+                    <p class="italic text-sm">โชคชะตาต้องใช้เวลาในการปรากฏผล โปรดอย่าเปิดไพ่ซ้ำในเรื่องเดิมเป็นเวลาอย่างน้อย 3 เดือน</p>
                 </div>
                 <button onclick="closeModal()" class="mt-10 px-12 py-4 bg-ethereal-gold text-white font-black uppercase tracking-widest text-xs rounded-full hover:scale-105 transition">ข้าพเจ้ารับทราบ</button>
             </div>
@@ -421,7 +480,7 @@
         const deckData = {
             major: [
                 { name: "0 • THE FOOL", image: "00 - The Fool.jpg", desc: "การเริ่มต้นอะไรใหม่ๆ การเสี่ยงอันตราย เส้นทางใหม่ที่คุณจะเดินไปอาจมีความเสี่ยง แต่เป็นความเสี่ยงที่คุณต้องการ รู้ว่าเสี่ยงแต่คงต้องขอลอง" },
-                { name: "I • THE MAGICIAN", image: "01 - The Magician.jpg", desc: "ความทะเยอทะยาน การลงมือทำ คุณเก่งมาก อยากทำอะไรก็ลุยให้เต็มที่เลย เพราะไฟในตัวมีเยอะพอๆ กับความสามารถ ลุยได้เลยไม่ต้องยั้ง" },
+                { name: "I • THE MAGICIAN", image: "01 - The Magician.jpg", desc: "ต้องการความทะเยอทะยานและการลงมือทำ คุณเก่งมาก อยากทำอะไรก็ลุยให้เต็มที่เลย เพราะไฟในตัวมีเยอะพอๆ กับความสามารถ ลุยได้เลยไม่ต้องยั้ง" },
                 { name: "II • HIGH PRIESTESS", image: "02 - The High Priestess.jpg", desc: "ความฉลาด มีความรู้ความสามารถ เป็นตัวแทนของคนเก่ง แต่มักซ่อนสิ่งนั้นเอาไว้ภายในรูปลักษณ์นิ่งเงียบที่แสดงให้ภายนอกได้เห็น" },
                 { name: "III • THE EMPRESS", image: "03 - The Empress.jpg", desc: "ความอุดมสมบูรณ์ ความเป็นแม่ จะเจอแต่ความสุขความสบาย เงินทองมั่งมี หรืออาจหมายถึงโอกาสตั้งครรภ์" },
                 { name: "IV • THE EMPEROR", image: "04 - The Emperor.jpg", desc: "การมีอำนาจ ชอบสั่ง และไม่ยอมใคร อาจอยู่ในสถานการณ์ที่ต้องยอมทำตามผู้ใหญ่ ถูกบังคับจากคนมีอำนาจมากกว่า และยังหมายถึงความมั่นคง" },
@@ -459,7 +518,7 @@
                 Swords: Array.from({length: 14}, (_, i) => {
                     const label = numToWord[i];
                     const name = `${label} of Swords`;
-                    const descs = ["ความสำเร็จ จุดเริ่มต้นของสิ่งใหม่ๆ มีคนยื่นโอกาสดีๆ เข้ามาให้", "การจนมุม ขยับตัวไม่ได้ เลือกไม่ได้ว่าต้องทำอย่างไร ตัดสินใจไม่ได้", "ความเสียใจ ใจสลาย ต้องเจอเรื่องผิดหวัง", "การพักผ่อน นิ่งเฉย โดนกดดันจากรอบตัวจนไม่อาจตัดสินใจอะไรได้", "ปัญหาต่างๆ ที่ถาโถมเข้ามา การไม่ลงรอยกันกับคนรอบตัวและการสูญเสีย", "การละเลยปัญหา เพิกเฉยจนบานปลายทำให้ตกอยู่ในสภาวะจำยอม", "การขโมย ทำเรื่องผิดกฎหมาย หรือมีงานเยอะมากจนล้นมือทำไม่ทัน", "การถูกบีบบังคับจากสถานการณ์จนไม่อาจขยับตัวทำอะไรได้ หรือถูกปิดหูปิดตา", "ความเครียด ความกังวล ปวดหัว คิดมาก รุนแรงถึงขั้นนอนไม่หลับ", "จุดจบ สิ้นสุด เรื่องเครียดและปวดหัวต่างๆ จะจบลงในไม่ช้า", "ใช้สัญชาตญาณในการตัดสินใจ เชื่อมั่นในตัวเองและต้องอดทนเพื่อชนะอุปสรรค", "การต่อสู้ ฝ่าฟัน ต้องออกแรงเยอะและเหนื่อยเพื่อให้ได้สิ่งที่ต้องการ", "ความอิสระเสรี ความตรงไปตรงมา ความเด็ดเดี่ยว จัดการสิ่งใดด้วยความเด็ดขาด", "ความมุ่งมั่น ความเด็ดเดี่ยว การคิดวิเคราะห์ ต้องใช้ทั้ง 3 อย่างเพื่อผ่านอุปสรรค"];
+                    const descs = ["ความสำเร็จ จุดเริ่มต้นของสิ่งใหม่ๆ มีคนยื่นโอกาสดีๆ เข้ามาให้", "การจนมุม ขยับตัวไม่ได้ เลือกไม่ได้ว่าต้องทำอย่างไร ตัดสินใจไม่ได้", "ความเสียใจ ใจสลาย ต้องเจอเรื่องผิดหวัง", "การพักผ่อน นิ่งเฉย โดนกดดันจากรอบตัวจนไม่อาใจตัดสินใจอะไรได้", "ปัญหาต่างๆ ที่ถาโถมเข้ามา การไม่ลงรอยกันกับคนรอบตัวและการสูญเสีย", "การละเลยปัญหา เพิกเฉยจนบานปลายทำให้ตกอยู่ในสภาวะจำยอม", "การขโมย ทำเรื่องผิดกฎหมาย หรือมีงานเยอะมากจนล้นมือทำไม่ทัน", "การถูกบีบบังคับจากสถานการณ์จนไม่อาจขยับตัวทำอะไรได้ หรือถูกปิดหูปิดตา", "ความเครียด ความกังวล ปวดหัว คิดมาก รุนแรงถึงขั้นนอนไม่หลับ", "จุดจบ สิ้นสุด เรื่องเครียดและปวดหัวต่างๆ จะจบลงในไม่ช้า", "ใช้สัญชาตญาณในการตัดสินใจ เชื่อมั่นในตัวเองและต้องอดทนเพื่อชนะอุปสรรค", "การต่อสู้ ฝ่าฟัน ต้องออกแรงเยอะและเหนื่อยเพื่อให้ได้สิ่งที่ต้องการ", "ความอิสระเสรี ความตรงไปตรงมา ความเด็ดเดี่ยว จัดการสิ่งใดด้วยความเด็ดขาด", "ความมุ่งมั่น ความเด็ดเดี่ยว การคิดวิเคราะห์ ต้องใช้ทั้ง 3 อย่างเพื่อผ่านอุปสรรค"];
                     return { name, image: `${i + 50} - ${name}.jpg`, desc: descs[i], type: 'minor', suit: 'Swords', index: i };
                 }),
                 Pentacles: Array.from({length: 14}, (_, i) => {
