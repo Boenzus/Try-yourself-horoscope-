@@ -467,7 +467,7 @@
     </footer>
 
     <script>
-        const apiKey = ""; // Do not change. Runtime key provided.
+        const apiKey = ""; // Runtime key provided by platform.
         const numToWord = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Page", "Knight", "Queen", "King"];
         let currentSpotlightCard = null;
         let selectedCards = [];
@@ -537,13 +537,6 @@
             const delays = [1000, 2000, 4000, 8000, 16000];
             for (let i = 0; i <= delays.length; i++) {
                 try {
-                    if (apiKey === "") {
-                        // Helpful reminder for user testing on their public site
-                        if (window.location.hostname !== "localhost" && !window.location.hostname.includes("gemini")) {
-                           return "The mystical digital spirit requires an API Key to function on your public website. Please ensure your apiKey variable is set.";
-                        }
-                    }
-
                     const response = await fetch(url, { 
                         method: 'POST', 
                         headers: { 'Content-Type': 'application/json' }, 
@@ -558,7 +551,6 @@
                     
                     return text;
                 } catch (err) {
-                    console.error("AI Spirit Connection Error:", err);
                     if (i === delays.length) throw err;
                     await new Promise(r => setTimeout(r, delays[i]));
                 }
